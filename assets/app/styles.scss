@@ -1,0 +1,70 @@
+$font-stack:    Helvetica, sans-serif;
+$blue: deepskyblue;
+
+body {
+    font: 100% $font-stack;
+    background-color: #000000;
+}
+
+.header {
+    margin: 1.2em 1.5em;
+    font-size: 2.2em;
+    color: $blue;
+}
+
+.blue {
+    color: $blue;
+}
+
+.red {
+    color: darkred;
+}
+
+.green {
+    color: darkgreen;
+}
+
+.white {
+    color: #fff;
+}
+
+.gray {
+    color: dimgray;
+}
+
+.data-table {
+    font-size: 1.8em;
+
+    thead tr {
+        background-color: green;
+        color: #000;
+    }
+
+    td {
+        color: lightgray;
+    }
+
+    th, td {
+        padding: 0 !important;
+    }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: $blue;
+  color: #000;
+
+    button {
+        font-size: 1.3em;
+        font-weight: bold;
+        background-color: $blue;
+        border: 0;
+    }
+}
+
+
+.content {
+    margin-bottom: 1.5em;
+}
