@@ -7,14 +7,6 @@ var Cpu = require('../models/cpu');
 
 router.get('/', function (req, res, next) {
     Cpu.find()
-        
-        
-        
-        
-        .populate('user', 'firstName')/*TODO: reference to user table - remove it if not needed */
-
-
-
         .exec(function (err, cpus) {
             if (err) {
                 return res.status(500).json({

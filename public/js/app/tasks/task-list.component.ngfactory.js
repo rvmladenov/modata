@@ -23,14 +23,16 @@ import * as import13 from '@angular/forms/src/directives/ng_model';
 import * as import14 from '@angular/forms/src/directives/ng_control_status';
 import * as import15 from '@angular/common/src/directives/ng_class';
 import * as import16 from '@angular/common/src/directives/ng_for';
-import * as import17 from '@angular/core/src/linker/element_ref';
-import * as import18 from '@angular/core/src/change_detection/differs/iterable_differs';
-import * as import19 from '@angular/core/src/change_detection/differs/keyvalue_differs';
-import * as import20 from '@angular/core/src/linker/template_ref';
-import * as import21 from '@angular/forms/src/directives/control_value_accessor';
-import * as import22 from '@angular/forms/src/directives/ng_control';
-import * as import23 from './tasks.component';
-import * as import24 from './tasks.component.ngfactory';
+import * as import17 from './search.filter.pipe';
+import * as import18 from './sort-by.filter';
+import * as import19 from '@angular/core/src/linker/element_ref';
+import * as import20 from '@angular/core/src/change_detection/differs/iterable_differs';
+import * as import21 from '@angular/core/src/change_detection/differs/keyvalue_differs';
+import * as import22 from '@angular/core/src/linker/template_ref';
+import * as import23 from '@angular/forms/src/directives/control_value_accessor';
+import * as import24 from '@angular/forms/src/directives/ng_control';
+import * as import25 from './tasks.component';
+import * as import26 from './tasks.component.ngfactory';
 var renderType_TaskListComponent_Host = null;
 var _View_TaskListComponent_Host0 = (function (_super) {
     __extends(_View_TaskListComponent_Host0, _super);
@@ -92,7 +94,7 @@ var _View_TaskListComponent0 = (function (_super) {
         this._el_7 = this.renderer.createElement(this._el_2, 'input', null);
         this.renderer.setElementAttribute(this._el_7, 'id', 'searchValue');
         this.renderer.setElementAttribute(this._el_7, 'type', 'text');
-        this._DefaultValueAccessor_7_3 = new import12.DefaultValueAccessor(this.renderer, new import17.ElementRef(this._el_7));
+        this._DefaultValueAccessor_7_3 = new import12.DefaultValueAccessor(this.renderer, new import19.ElementRef(this._el_7));
         this._NG_VALUE_ACCESSOR_7_4 = [this._DefaultValueAccessor_7_3];
         this._NgModel_7_5 = new import13.NgModel(null, null, null, this._NG_VALUE_ACCESSOR_7_4);
         this._NgControl_7_6 = this._NgModel_7_5;
@@ -109,14 +111,14 @@ var _View_TaskListComponent0 = (function (_super) {
         this._el_16 = this.renderer.createElement(this._el_15, 'a', null);
         this.renderer.setElementAttribute(this._el_16, 'class', 'btn btn-xs glyphicon glyphicon-resize-vertical');
         this.renderer.setElementAttribute(this._el_16, 'role', 'button');
-        this._NgClass_16_3 = new import15.NgClass(this.parentInjector.get(import18.IterableDiffers), this.parentInjector.get(import19.KeyValueDiffers), new import17.ElementRef(this._el_16), this.renderer);
+        this._NgClass_16_3 = new import15.NgClass(this.parentInjector.get(import20.IterableDiffers), this.parentInjector.get(import21.KeyValueDiffers), new import19.ElementRef(this._el_16), this.renderer);
         this._text_17 = this.renderer.createText(this._el_15, 'PID', null);
         this._text_18 = this.renderer.createText(this._el_13, '\n            ', null);
         this._el_19 = this.renderer.createElement(this._el_13, 'th', null);
         this._el_20 = this.renderer.createElement(this._el_19, 'a', null);
         this.renderer.setElementAttribute(this._el_20, 'class', 'btn btn-xs glyphicon glyphicon-resize-vertical');
         this.renderer.setElementAttribute(this._el_20, 'role', 'button');
-        this._NgClass_20_3 = new import15.NgClass(this.parentInjector.get(import18.IterableDiffers), this.parentInjector.get(import19.KeyValueDiffers), new import17.ElementRef(this._el_20), this.renderer);
+        this._NgClass_20_3 = new import15.NgClass(this.parentInjector.get(import20.IterableDiffers), this.parentInjector.get(import21.KeyValueDiffers), new import19.ElementRef(this._el_20), this.renderer);
         this._text_21 = this.renderer.createText(this._el_19, 'User', null);
         this._text_22 = this.renderer.createText(this._el_13, '\n            ', null);
         this._el_23 = this.renderer.createElement(this._el_13, 'th', null);
@@ -141,8 +143,8 @@ var _View_TaskListComponent0 = (function (_super) {
         this._text_41 = this.renderer.createText(this._el_40, '\n            ', null);
         this._anchor_42 = this.renderer.createTemplateAnchor(this._el_40, null);
         this._appEl_42 = new import2.AppElement(42, 40, this, this._anchor_42);
-        this._TemplateRef_42_5 = new import20.TemplateRef_(this._appEl_42, viewFactory_TaskListComponent1);
-        this._NgFor_42_6 = new import16.NgFor(this._appEl_42.vcRef, this._TemplateRef_42_5, this.parentInjector.get(import18.IterableDiffers), this.ref);
+        this._TemplateRef_42_5 = new import22.TemplateRef_(this._appEl_42, viewFactory_TaskListComponent1);
+        this._NgFor_42_6 = new import16.NgFor(this._appEl_42.vcRef, this._TemplateRef_42_5, this.parentInjector.get(import20.IterableDiffers), this.ref);
         this._text_43 = this.renderer.createText(this._el_40, '\n        ', null);
         this._text_44 = this.renderer.createText(this._el_9, '\n        ', null);
         this._text_45 = this.renderer.createText(this._el_2, '\n    ', null);
@@ -176,6 +178,23 @@ var _View_TaskListComponent0 = (function (_super) {
             return { white: p0 };
         });
         this._expr_15 = import7.UNINITIALIZED;
+        this._pipe_search_0 = new import17.SearchTasksPipe();
+        this._pipe_search_0_0 = import4.pureProxy2(this._pipe_search_0.transform.bind(this._pipe_search_0));
+        this._arr_0 = import4.pureProxy2(function (p0, p1) {
+            return [
+                p0,
+                p1
+            ];
+        });
+        this._pipe_sortBy_1 = new import18.SortByPipe();
+        this._pipe_sortBy_1_0 = import4.pureProxy2(this._pipe_sortBy_1.transform.bind(this._pipe_sortBy_1));
+        this._arr_1 = import4.pureProxy2(function (p0, p1) {
+            return [
+                p0,
+                p1
+            ];
+        });
+        this._pipe_sortBy_1_1 = import4.pureProxy2(this._pipe_sortBy_1.transform.bind(this._pipe_sortBy_1));
         this._expr_16 = import7.UNINITIALIZED;
         this.init([], [
             this._el_0,
@@ -244,13 +263,13 @@ var _View_TaskListComponent0 = (function (_super) {
         if (((token === import12.DefaultValueAccessor) && (7 === requestNodeIndex))) {
             return this._DefaultValueAccessor_7_3;
         }
-        if (((token === import21.NG_VALUE_ACCESSOR) && (7 === requestNodeIndex))) {
+        if (((token === import23.NG_VALUE_ACCESSOR) && (7 === requestNodeIndex))) {
             return this._NG_VALUE_ACCESSOR_7_4;
         }
         if (((token === import13.NgModel) && (7 === requestNodeIndex))) {
             return this._NgModel_7_5;
         }
-        if (((token === import22.NgControl) && (7 === requestNodeIndex))) {
+        if (((token === import24.NgControl) && (7 === requestNodeIndex))) {
             return this._NgControl_7_6;
         }
         if (((token === import14.NgControlStatus) && (7 === requestNodeIndex))) {
@@ -262,7 +281,7 @@ var _View_TaskListComponent0 = (function (_super) {
         if (((token === import15.NgClass) && (20 === requestNodeIndex))) {
             return this._NgClass_20_3;
         }
-        if (((token === import20.TemplateRef) && (42 === requestNodeIndex))) {
+        if (((token === import22.TemplateRef) && (42 === requestNodeIndex))) {
             return this._TemplateRef_42_5;
         }
         if (((token === import16.NgFor) && (42 === requestNodeIndex))) {
@@ -272,6 +291,7 @@ var _View_TaskListComponent0 = (function (_super) {
     };
     _View_TaskListComponent0.prototype.detectChangesInternal = function (throwOnChange) {
         var changes = null;
+        var valUnwrapper = new import7.ValueUnwrapper();
         changes = null;
         var currVal_3 = this.context.searchValue;
         if (import4.checkBinding(throwOnChange, this._expr_3, currVal_3)) {
@@ -312,8 +332,9 @@ var _View_TaskListComponent0 = (function (_super) {
             this._NgClass_20_3.ngDoCheck();
         }
         changes = null;
-        var currVal_16 = this.context.tasks;
-        if (import4.checkBinding(throwOnChange, this._expr_16, currVal_16)) {
+        valUnwrapper.reset();
+        var currVal_16 = valUnwrapper.unwrap(import4.castByValue(this._pipe_sortBy_1_1, this._pipe_sortBy_1.transform)(valUnwrapper.unwrap(import4.castByValue(this._pipe_sortBy_1_0, this._pipe_sortBy_1.transform)(valUnwrapper.unwrap(import4.castByValue(this._pipe_search_0_0, this._pipe_search_0.transform)(this.context.tasks, this.context.searchValue)), this._arr_0('pid', this.context.byId))), this._arr_1('name', this.context.byName)));
+        if ((valUnwrapper.hasWrappedValue || import4.checkBinding(throwOnChange, this._expr_16, currVal_16))) {
             this._NgFor_42_6.ngForOf = currVal_16;
             if ((changes === null)) {
                 (changes = {});
@@ -405,8 +426,8 @@ var _View_TaskListComponent1 = (function (_super) {
         this._el_0 = this.renderer.createElement(null, 'tr', null);
         this.renderer.setElementAttribute(this._el_0, 'app-task', '');
         this._appEl_0 = new import2.AppElement(0, null, this, this._el_0);
-        var compView_0 = import24.viewFactory_TasksComponent0(this.viewUtils, this.injector(0), this._appEl_0);
-        this._TasksComponent_0_4 = new import23.TasksComponent(new import17.ElementRef(this._el_0), this.renderer);
+        var compView_0 = import26.viewFactory_TasksComponent0(this.viewUtils, this.injector(0), this._appEl_0);
+        this._TasksComponent_0_4 = new import25.TasksComponent(new import19.ElementRef(this._el_0), this.renderer);
         this._appEl_0.initComponent(this._TasksComponent_0_4, [], compView_0);
         compView_0.create(this._TasksComponent_0_4, [], null);
         var disposable_0 = this.renderer.listen(this._el_0, 'mouseenter', this.eventHandler(this._handle_mouseenter_0_0.bind(this)));
@@ -419,7 +440,7 @@ var _View_TaskListComponent1 = (function (_super) {
         return null;
     };
     _View_TaskListComponent1.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
-        if (((token === import23.TasksComponent) && (0 === requestNodeIndex))) {
+        if (((token === import25.TasksComponent) && (0 === requestNodeIndex))) {
             return this._TasksComponent_0_4;
         }
         return notFoundResult;

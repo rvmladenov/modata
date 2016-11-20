@@ -16,7 +16,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr app-task [task]="task" *ngFor="let task of tasks"></tr>
+            <tr app-task [task]="task" *ngFor="let task of tasks | search: searchValue | sortBy: ['pid', byId] | sortBy: ['name', byName]"></tr>
         </tbody>
         </table>
     </div>
