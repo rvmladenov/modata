@@ -653,6 +653,6 @@ class _View_SignupComponent0 extends import1.AppView<import3.SignupComponent> {
   }
 }
 export function viewFactory_SignupComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.SignupComponent> {
-  if ((renderType_SignupComponent === (null as any))) { (renderType_SignupComponent = viewUtils.createRenderComponentType('C:/github/demo-nodejs-ng2-socketio-d3/assets/app/auth/signup.component.html',0,import9.ViewEncapsulation.None,styles_SignupComponent,{})); }
+  if ((renderType_SignupComponent === (null as any))) { (renderType_SignupComponent = viewUtils.createRenderComponentType('C:/github/modata/assets/app/auth/signup.component.html',0,import9.ViewEncapsulation.None,styles_SignupComponent,{})); }
   return new _View_SignupComponent0(viewUtils,parentInjector,declarationEl);
 }

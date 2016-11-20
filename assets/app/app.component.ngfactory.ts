@@ -12,17 +12,18 @@ import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from '@angular/core/src/metadata/view';
-import * as import9 from '@angular/core/src/linker/component_factory';
-import * as import10 from './styles.scss';
-import * as import11 from './header.component';
-import * as import12 from '@angular/router/src/directives/router_outlet';
-import * as import13 from './errors/error.component';
-import * as import14 from './header.component.ngfactory';
-import * as import15 from '@angular/router/src/router_outlet_map';
-import * as import16 from '@angular/core/src/linker/component_factory_resolver';
-import * as import17 from './errors/error.component.ngfactory';
-import * as import18 from './errors/error.service';
+import * as import8 from './socket/socket.service';
+import * as import9 from '@angular/core/src/metadata/view';
+import * as import10 from '@angular/core/src/linker/component_factory';
+import * as import11 from './styles.scss';
+import * as import12 from './header.component';
+import * as import13 from '@angular/router/src/directives/router_outlet';
+import * as import14 from './errors/error.component';
+import * as import15 from './header.component.ngfactory';
+import * as import16 from '@angular/router/src/router_outlet_map';
+import * as import17 from '@angular/core/src/linker/component_factory_resolver';
+import * as import18 from './errors/error.component.ngfactory';
+import * as import19 from './errors/error.service';
 var renderType_AppComponent_Host:import0.RenderComponentType = (null as any);
 class _View_AppComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -35,7 +36,7 @@ class _View_AppComponent_Host0 extends import1.AppView<any> {
     this._el_0 = this.selectOrCreateHostElement('my-app',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_AppComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._AppComponent_0_4 = new import3.AppComponent();
+    this._AppComponent_0_4 = new import3.AppComponent(this.parentInjector.get(import8.SocketService));
     this._appEl_0.initComponent(this._AppComponent_0_4,[],compView_0);
     compView_0.create(this._AppComponent_0_4,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
@@ -45,52 +46,32 @@ class _View_AppComponent_Host0 extends import1.AppView<any> {
     if (((token === import3.AppComponent) && (0 === requestNodeIndex))) { return this._AppComponent_0_4; }
     return notFoundResult;
   }
-  detectChangesInternal(throwOnChange:boolean):void {
-    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._AppComponent_0_4.ngOnInit(); }
-    this.detectContentChildrenChanges(throwOnChange);
-    this.detectViewChildrenChanges(throwOnChange);
-  }
 }
 function viewFactory_AppComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  if ((renderType_AppComponent_Host === (null as any))) { (renderType_AppComponent_Host = viewUtils.createRenderComponentType('',0,import8.ViewEncapsulation.None,[],{})); }
+  if ((renderType_AppComponent_Host === (null as any))) { (renderType_AppComponent_Host = viewUtils.createRenderComponentType('',0,import9.ViewEncapsulation.None,[],{})); }
   return new _View_AppComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const AppComponentNgFactory:import9.ComponentFactory<import3.AppComponent> = new import9.ComponentFactory<import3.AppComponent>('my-app',viewFactory_AppComponent_Host0,import3.AppComponent);
-const styles_AppComponent:any[] = [import10.styles];
+export const AppComponentNgFactory:import10.ComponentFactory<import3.AppComponent> = new import10.ComponentFactory<import3.AppComponent>('my-app',viewFactory_AppComponent_Host0,import3.AppComponent);
+const styles_AppComponent:any[] = [import11.styles];
 var renderType_AppComponent:import0.RenderComponentType = (null as any);
 class _View_AppComponent0 extends import1.AppView<import3.AppComponent> {
   _el_0:any;
   _text_1:any;
   _el_2:any;
   /*private*/ _appEl_2:import2.AppElement;
-  _HeaderComponent_2_4:import11.HeaderComponent;
+  _HeaderComponent_2_4:import12.HeaderComponent;
   _text_3:any;
   _el_4:any;
   _text_5:any;
   _el_6:any;
   /*private*/ _appEl_6:import2.AppElement;
-  _RouterOutlet_6_5:import12.RouterOutlet;
+  _RouterOutlet_6_5:import13.RouterOutlet;
   _text_7:any;
   _text_8:any;
   _text_9:any;
   _el_10:any;
-  _text_11:any;
-  _el_12:any;
-  _text_13:any;
-  _text_14:any;
-  _el_15:any;
-  _text_16:any;
-  _text_17:any;
-  _el_18:any;
-  _text_19:any;
-  _text_20:any;
-  _el_21:any;
-  _text_22:any;
-  _text_23:any;
-  _text_24:any;
-  _el_25:any;
-  /*private*/ _appEl_25:import2.AppElement;
-  _ErrorComponent_25_4:import13.ErrorComponent;
+  /*private*/ _appEl_10:import2.AppElement;
+  _ErrorComponent_10_4:import14.ErrorComponent;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_AppComponent0,renderType_AppComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -101,8 +82,8 @@ class _View_AppComponent0 extends import1.AppView<import3.AppComponent> {
     this._text_1 = this.renderer.createText(this._el_0,'\n    ',(null as any));
     this._el_2 = this.renderer.createElement(this._el_0,'app-header',(null as any));
     this._appEl_2 = new import2.AppElement(2,0,this,this._el_2);
-    var compView_2:any = import14.viewFactory_HeaderComponent0(this.viewUtils,this.injector(2),this._appEl_2);
-    this._HeaderComponent_2_4 = new import11.HeaderComponent();
+    var compView_2:any = import15.viewFactory_HeaderComponent0(this.viewUtils,this.injector(2),this._appEl_2);
+    this._HeaderComponent_2_4 = new import12.HeaderComponent();
     this._appEl_2.initComponent(this._HeaderComponent_2_4,[],compView_2);
     compView_2.create(this._HeaderComponent_2_4,[],(null as any));
     this._text_3 = this.renderer.createText(this._el_0,'\n    ',(null as any));
@@ -110,31 +91,16 @@ class _View_AppComponent0 extends import1.AppView<import3.AppComponent> {
     this._text_5 = this.renderer.createText(this._el_0,'\n    ',(null as any));
     this._el_6 = this.renderer.createElement(this._el_0,'router-outlet',(null as any));
     this._appEl_6 = new import2.AppElement(6,0,this,this._el_6);
-    this._RouterOutlet_6_5 = new import12.RouterOutlet(this.parentInjector.get(import15.RouterOutletMap),this._appEl_6.vcRef,this.parentInjector.get(import16.ComponentFactoryResolver),(null as any));
+    this._RouterOutlet_6_5 = new import13.RouterOutlet(this.parentInjector.get(import16.RouterOutletMap),this._appEl_6.vcRef,this.parentInjector.get(import17.ComponentFactoryResolver),(null as any));
     this._text_7 = this.renderer.createText(this._el_0,'\n',(null as any));
     this._text_8 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     this._text_9 = this.renderer.createText(parentRenderNode,'\n',(null as any));
-    this._el_10 = this.renderer.createElement(parentRenderNode,'footer',(null as any));
-    this._text_11 = this.renderer.createText(this._el_10,'\n  ',(null as any));
-    this._el_12 = this.renderer.createElement(this._el_10,'button',(null as any));
-    this._text_13 = this.renderer.createText(this._el_12,'Search Processes',(null as any));
-    this._text_14 = this.renderer.createText(this._el_10,'\n  ',(null as any));
-    this._el_15 = this.renderer.createElement(this._el_10,'button',(null as any));
-    this._text_16 = this.renderer.createText(this._el_15,'Sort Processes(PID)',(null as any));
-    this._text_17 = this.renderer.createText(this._el_10,'\n  ',(null as any));
-    this._el_18 = this.renderer.createElement(this._el_10,'button',(null as any));
-    this._text_19 = this.renderer.createText(this._el_18,'Sort Processes(Name)',(null as any));
-    this._text_20 = this.renderer.createText(this._el_10,'\n  ',(null as any));
-    this._el_21 = this.renderer.createElement(this._el_10,'button',(null as any));
-    this._text_22 = this.renderer.createText(this._el_21,'Terminate',(null as any));
-    this._text_23 = this.renderer.createText(this._el_10,'\n',(null as any));
-    this._text_24 = this.renderer.createText(parentRenderNode,'\n',(null as any));
-    this._el_25 = this.renderer.createElement(parentRenderNode,'app-error',(null as any));
-    this._appEl_25 = new import2.AppElement(25,(null as any),this,this._el_25);
-    var compView_25:any = import17.viewFactory_ErrorComponent0(this.viewUtils,this.injector(25),this._appEl_25);
-    this._ErrorComponent_25_4 = new import13.ErrorComponent(this.parentInjector.get(import18.ErrorService));
-    this._appEl_25.initComponent(this._ErrorComponent_25_4,[],compView_25);
-    compView_25.create(this._ErrorComponent_25_4,[],(null as any));
+    this._el_10 = this.renderer.createElement(parentRenderNode,'app-error',(null as any));
+    this._appEl_10 = new import2.AppElement(10,(null as any),this,this._el_10);
+    var compView_10:any = import18.viewFactory_ErrorComponent0(this.viewUtils,this.injector(10),this._appEl_10);
+    this._ErrorComponent_10_4 = new import14.ErrorComponent(this.parentInjector.get(import19.ErrorService));
+    this._appEl_10.initComponent(this._ErrorComponent_10_4,[],compView_10);
+    compView_10.create(this._ErrorComponent_10_4,[],(null as any));
     this.init([],[
       this._el_0,
       this._text_1,
@@ -146,34 +112,19 @@ class _View_AppComponent0 extends import1.AppView<import3.AppComponent> {
       this._text_7,
       this._text_8,
       this._text_9,
-      this._el_10,
-      this._text_11,
-      this._el_12,
-      this._text_13,
-      this._text_14,
-      this._el_15,
-      this._text_16,
-      this._text_17,
-      this._el_18,
-      this._text_19,
-      this._text_20,
-      this._el_21,
-      this._text_22,
-      this._text_23,
-      this._text_24,
-      this._el_25
+      this._el_10
     ]
     ,[],[]);
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import11.HeaderComponent) && (2 === requestNodeIndex))) { return this._HeaderComponent_2_4; }
-    if (((token === import12.RouterOutlet) && (6 === requestNodeIndex))) { return this._RouterOutlet_6_5; }
-    if (((token === import13.ErrorComponent) && (25 === requestNodeIndex))) { return this._ErrorComponent_25_4; }
+    if (((token === import12.HeaderComponent) && (2 === requestNodeIndex))) { return this._HeaderComponent_2_4; }
+    if (((token === import13.RouterOutlet) && (6 === requestNodeIndex))) { return this._RouterOutlet_6_5; }
+    if (((token === import14.ErrorComponent) && (10 === requestNodeIndex))) { return this._ErrorComponent_10_4; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._ErrorComponent_25_4.ngOnInit(); }
+    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._ErrorComponent_10_4.ngOnInit(); }
     this.detectContentChildrenChanges(throwOnChange);
     this.detectViewChildrenChanges(throwOnChange);
   }
@@ -182,6 +133,6 @@ class _View_AppComponent0 extends import1.AppView<import3.AppComponent> {
   }
 }
 export function viewFactory_AppComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.AppComponent> {
-  if ((renderType_AppComponent === (null as any))) { (renderType_AppComponent = viewUtils.createRenderComponentType('C:/github/demo-nodejs-ng2-socketio-d3/assets/app/app.component.html',0,import8.ViewEncapsulation.None,styles_AppComponent,{})); }
+  if ((renderType_AppComponent === (null as any))) { (renderType_AppComponent = viewUtils.createRenderComponentType('C:/github/modata/assets/app/app.component.html',0,import9.ViewEncapsulation.None,styles_AppComponent,{})); }
   return new _View_AppComponent0(viewUtils,parentInjector,declarationEl);
 }

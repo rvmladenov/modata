@@ -1,4 +1,4 @@
-import { Component, Input, AfterViewInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 
 import { Cpu } from "./cpu.model";
 import { CpuService } from "./cpu.service";
@@ -20,7 +20,7 @@ export class CpusComponent {
         // return localStorage.getItem('userId') == this.message.userId;
     }
 
-    ngAfterViewInit() {
+    ngOnInit() {
         function InitChart(input) {
                     var data = input.cpu1;
                     var data2 = input.cpu2;

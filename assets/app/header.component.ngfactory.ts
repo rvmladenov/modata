@@ -69,8 +69,13 @@ class _View_HeaderComponent0 extends import1.AppView<import3.HeaderComponent> {
     if (((token === import10.CpusComponent) && (0 === requestNodeIndex))) { return this._CpusComponent_0_4; }
     return notFoundResult;
   }
+  detectChangesInternal(throwOnChange:boolean):void {
+    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._CpusComponent_0_4.ngOnInit(); }
+    this.detectContentChildrenChanges(throwOnChange);
+    this.detectViewChildrenChanges(throwOnChange);
+  }
 }
 export function viewFactory_HeaderComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.HeaderComponent> {
-  if ((renderType_HeaderComponent === (null as any))) { (renderType_HeaderComponent = viewUtils.createRenderComponentType('C:/github/demo-nodejs-ng2-socketio-d3/assets/app/header.component.html',0,import8.ViewEncapsulation.None,styles_HeaderComponent,{})); }
+  if ((renderType_HeaderComponent === (null as any))) { (renderType_HeaderComponent = viewUtils.createRenderComponentType('C:/github/modata/assets/app/header.component.html',0,import8.ViewEncapsulation.None,styles_HeaderComponent,{})); }
   return new _View_HeaderComponent0(viewUtils,parentInjector,declarationEl);
 }

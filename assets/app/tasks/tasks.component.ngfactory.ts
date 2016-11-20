@@ -12,7 +12,7 @@ import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from './task.service';
+import * as import8 from '@angular/core/src/linker/element_ref';
 import * as import9 from '@angular/core/src/metadata/view';
 import * as import10 from '@angular/core/src/linker/component_factory';
 var renderType_TasksComponent_Host:import0.RenderComponentType = (null as any);
@@ -24,652 +24,170 @@ class _View_TasksComponent_Host0 extends import1.AppView<any> {
     super(_View_TasksComponent_Host0,renderType_TasksComponent_Host,import6.ViewType.HOST,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
-    this._el_0 = this.selectOrCreateHostElement('app-task',rootSelector,(null as any));
+    this._el_0 = this.selectOrCreateHostElement('div',rootSelector,(null as any));
+    this.renderer.setElementAttribute(this._el_0,'app-task','');
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_TasksComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._TasksComponent_0_4 = new import3.TasksComponent(this.parentInjector.get(import8.TaskService));
+    this._TasksComponent_0_4 = new import3.TasksComponent(new import8.ElementRef(this._el_0),this.renderer);
     this._appEl_0.initComponent(this._TasksComponent_0_4,[],compView_0);
     compView_0.create(this._TasksComponent_0_4,this.projectableNodes,(null as any));
-    this.init([].concat([this._el_0]),[this._el_0],[],[]);
+    var disposable_0:Function = this.renderer.listen(this._el_0,'mouseenter',this.eventHandler(this._handle_mouseenter_0_0.bind(this)));
+    var disposable_1:Function = this.renderer.listen(this._el_0,'mouseleave',this.eventHandler(this._handle_mouseleave_0_1.bind(this)));
+    this.init([].concat([this._el_0]),[this._el_0],[
+      disposable_0,
+      disposable_1
+    ]
+    ,[]);
     return this._appEl_0;
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
     if (((token === import3.TasksComponent) && (0 === requestNodeIndex))) { return this._TasksComponent_0_4; }
     return notFoundResult;
   }
+  private _handle_mouseenter_0_0($event:any):boolean {
+    this._appEl_0.componentView.markPathToRootAsCheckOnce();
+    const pd_0:any = ((<any>this._TasksComponent_0_4.onMouseEnter()) !== false);
+    return (true && pd_0);
+  }
+  private _handle_mouseleave_0_1($event:any):boolean {
+    this._appEl_0.componentView.markPathToRootAsCheckOnce();
+    const pd_0:any = ((<any>this._TasksComponent_0_4.onMouseLeave()) !== false);
+    return (true && pd_0);
+  }
 }
 function viewFactory_TasksComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
   if ((renderType_TasksComponent_Host === (null as any))) { (renderType_TasksComponent_Host = viewUtils.createRenderComponentType('',0,import9.ViewEncapsulation.None,[],{})); }
   return new _View_TasksComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const TasksComponentNgFactory:import10.ComponentFactory<import3.TasksComponent> = new import10.ComponentFactory<import3.TasksComponent>('app-task',viewFactory_TasksComponent_Host0,import3.TasksComponent);
+export const TasksComponentNgFactory:import10.ComponentFactory<import3.TasksComponent> = new import10.ComponentFactory<import3.TasksComponent>('[app-task]',viewFactory_TasksComponent_Host0,import3.TasksComponent);
 const styles_TasksComponent:any[] = ['./tasks.scss'];
 var renderType_TasksComponent:import0.RenderComponentType = (null as any);
 class _View_TasksComponent0 extends import1.AppView<import3.TasksComponent> {
   _el_0:any;
   _text_1:any;
-  _el_2:any;
-  _text_3:any;
-  _el_4:any;
+  _text_2:any;
+  _el_3:any;
+  _text_4:any;
   _text_5:any;
   _el_6:any;
   _text_7:any;
-  _el_8:any;
-  _text_9:any;
+  _text_8:any;
+  _el_9:any;
   _text_10:any;
-  _el_11:any;
-  _text_12:any;
+  _text_11:any;
+  _el_12:any;
   _text_13:any;
-  _el_14:any;
-  _text_15:any;
+  _text_14:any;
+  _el_15:any;
   _text_16:any;
-  _el_17:any;
-  _text_18:any;
+  _text_17:any;
+  _el_18:any;
   _text_19:any;
-  _el_20:any;
-  _text_21:any;
-  _text_22:any;
-  _el_23:any;
-  _text_24:any;
-  _text_25:any;
-  _el_26:any;
-  _text_27:any;
-  _text_28:any;
-  _text_29:any;
-  _text_30:any;
-  _el_31:any;
-  _text_32:any;
-  _el_33:any;
-  _text_34:any;
-  _el_35:any;
-  _text_36:any;
-  _text_37:any;
-  _el_38:any;
-  _text_39:any;
-  _text_40:any;
-  _el_41:any;
-  _text_42:any;
-  _text_43:any;
-  _el_44:any;
-  _text_45:any;
-  _text_46:any;
-  _el_47:any;
-  _text_48:any;
-  _text_49:any;
-  _el_50:any;
-  _text_51:any;
-  _text_52:any;
-  _el_53:any;
-  _text_54:any;
-  _text_55:any;
-  _text_56:any;
-  _el_57:any;
-  _text_58:any;
-  _el_59:any;
-  _text_60:any;
-  _text_61:any;
-  _el_62:any;
-  _text_63:any;
-  _text_64:any;
-  _el_65:any;
-  _text_66:any;
-  _text_67:any;
-  _el_68:any;
-  _text_69:any;
-  _text_70:any;
-  _el_71:any;
-  _text_72:any;
-  _text_73:any;
-  _el_74:any;
-  _text_75:any;
-  _text_76:any;
-  _el_77:any;
-  _text_78:any;
-  _text_79:any;
-  _text_80:any;
-  _el_81:any;
-  _text_82:any;
-  _el_83:any;
-  _text_84:any;
-  _text_85:any;
-  _el_86:any;
-  _text_87:any;
-  _text_88:any;
-  _el_89:any;
-  _text_90:any;
-  _text_91:any;
-  _el_92:any;
-  _text_93:any;
-  _text_94:any;
-  _el_95:any;
-  _text_96:any;
-  _text_97:any;
-  _el_98:any;
-  _text_99:any;
-  _text_100:any;
-  _el_101:any;
-  _text_102:any;
-  _text_103:any;
-  _text_104:any;
-  _el_105:any;
-  _text_106:any;
-  _el_107:any;
-  _text_108:any;
-  _text_109:any;
-  _el_110:any;
-  _text_111:any;
-  _text_112:any;
-  _el_113:any;
-  _text_114:any;
-  _text_115:any;
-  _el_116:any;
-  _text_117:any;
-  _text_118:any;
-  _el_119:any;
-  _text_120:any;
-  _text_121:any;
-  _el_122:any;
-  _text_123:any;
-  _text_124:any;
-  _el_125:any;
-  _text_126:any;
-  _text_127:any;
-  _text_128:any;
-  _el_129:any;
-  _text_130:any;
-  _el_131:any;
-  _text_132:any;
-  _text_133:any;
-  _el_134:any;
-  _text_135:any;
-  _text_136:any;
-  _el_137:any;
-  _text_138:any;
-  _text_139:any;
-  _el_140:any;
-  _text_141:any;
-  _text_142:any;
-  _el_143:any;
-  _text_144:any;
-  _text_145:any;
-  _el_146:any;
-  _text_147:any;
-  _text_148:any;
-  _el_149:any;
-  _text_150:any;
-  _text_151:any;
-  _text_152:any;
-  _el_153:any;
-  _text_154:any;
-  _el_155:any;
-  _text_156:any;
-  _text_157:any;
-  _el_158:any;
-  _text_159:any;
-  _text_160:any;
-  _el_161:any;
-  _text_162:any;
-  _text_163:any;
-  _el_164:any;
-  _text_165:any;
-  _text_166:any;
-  _el_167:any;
-  _text_168:any;
-  _text_169:any;
-  _el_170:any;
-  _text_171:any;
-  _text_172:any;
-  _el_173:any;
-  _text_174:any;
-  _text_175:any;
-  _text_176:any;
-  _el_177:any;
-  _text_178:any;
-  _el_179:any;
-  _text_180:any;
-  _text_181:any;
-  _el_182:any;
-  _text_183:any;
-  _text_184:any;
-  _el_185:any;
-  _text_186:any;
-  _text_187:any;
-  _el_188:any;
-  _text_189:any;
-  _text_190:any;
-  _el_191:any;
-  _text_192:any;
-  _text_193:any;
-  _el_194:any;
-  _text_195:any;
-  _text_196:any;
-  _el_197:any;
-  _text_198:any;
-  _text_199:any;
-  _text_200:any;
-  _text_201:any;
-  _text_202:any;
+  /*private*/ _expr_0:any;
+  /*private*/ _expr_1:any;
+  /*private*/ _expr_2:any;
+  /*private*/ _expr_3:any;
+  /*private*/ _expr_4:any;
+  /*private*/ _expr_5:any;
+  /*private*/ _expr_6:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_TasksComponent0,renderType_TasksComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
-    this._el_0 = this.renderer.createElement(parentRenderNode,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_0,'class','container-fluid');
-    this._text_1 = this.renderer.createText(this._el_0,'\n    ',(null as any));
-    this._el_2 = this.renderer.createElement(this._el_0,'table',(null as any));
-    this.renderer.setElementAttribute(this._el_2,'class','table table-sm data-table');
-    this._text_3 = this.renderer.createText(this._el_2,'\n      ',(null as any));
-    this._el_4 = this.renderer.createElement(this._el_2,'thead',(null as any));
-    this._text_5 = this.renderer.createText(this._el_4,'\n        ',(null as any));
-    this._el_6 = this.renderer.createElement(this._el_4,'tr',(null as any));
-    this._text_7 = this.renderer.createText(this._el_6,'\n          ',(null as any));
-    this._el_8 = this.renderer.createElement(this._el_6,'th',(null as any));
-    this._text_9 = this.renderer.createText(this._el_8,'PID',(null as any));
-    this._text_10 = this.renderer.createText(this._el_6,'\n          ',(null as any));
-    this._el_11 = this.renderer.createElement(this._el_6,'th',(null as any));
-    this._text_12 = this.renderer.createText(this._el_11,'User',(null as any));
-    this._text_13 = this.renderer.createText(this._el_6,'\n          ',(null as any));
-    this._el_14 = this.renderer.createElement(this._el_6,'th',(null as any));
-    this._text_15 = this.renderer.createText(this._el_14,'Name',(null as any));
-    this._text_16 = this.renderer.createText(this._el_6,'\n          ',(null as any));
-    this._el_17 = this.renderer.createElement(this._el_6,'th',(null as any));
-    this._text_18 = this.renderer.createText(this._el_17,'RES',(null as any));
-    this._text_19 = this.renderer.createText(this._el_6,'\n          ',(null as any));
-    this._el_20 = this.renderer.createElement(this._el_6,'th',(null as any));
-    this._text_21 = this.renderer.createText(this._el_20,'MEM%',(null as any));
-    this._text_22 = this.renderer.createText(this._el_6,'\n          ',(null as any));
-    this._el_23 = this.renderer.createElement(this._el_6,'th',(null as any));
-    this._text_24 = this.renderer.createText(this._el_23,'TIME+',(null as any));
-    this._text_25 = this.renderer.createText(this._el_6,'\n          ',(null as any));
-    this._el_26 = this.renderer.createElement(this._el_6,'th',(null as any));
-    this.renderer.setElementAttribute(this._el_26,'class','col-md-3');
-    this._text_27 = this.renderer.createText(this._el_26,'Command',(null as any));
-    this._text_28 = this.renderer.createText(this._el_6,'\n        ',(null as any));
-    this._text_29 = this.renderer.createText(this._el_4,'\n      ',(null as any));
-    this._text_30 = this.renderer.createText(this._el_2,'\n      ',(null as any));
-    this._el_31 = this.renderer.createElement(this._el_2,'tbody',(null as any));
-    this._text_32 = this.renderer.createText(this._el_31,'\n        ',(null as any));
-    this._el_33 = this.renderer.createElement(this._el_31,'tr',(null as any));
-    this._text_34 = this.renderer.createText(this._el_33,'\n          ',(null as any));
-    this._el_35 = this.renderer.createElement(this._el_33,'td',(null as any));
-    this._text_36 = this.renderer.createText(this._el_35,'12648',(null as any));
-    this._text_37 = this.renderer.createText(this._el_33,'\n          ',(null as any));
-    this._el_38 = this.renderer.createElement(this._el_33,'td',(null as any));
-    this._text_39 = this.renderer.createText(this._el_38,'root',(null as any));
-    this._text_40 = this.renderer.createText(this._el_33,'\n          ',(null as any));
-    this._el_41 = this.renderer.createElement(this._el_33,'td',(null as any));
-    this._text_42 = this.renderer.createText(this._el_41,'dummy process',(null as any));
-    this._text_43 = this.renderer.createText(this._el_33,'\n          ',(null as any));
-    this._el_44 = this.renderer.createElement(this._el_33,'td',(null as any));
-    this._text_45 = this.renderer.createText(this._el_44,'1860',(null as any));
-    this._text_46 = this.renderer.createText(this._el_33,'\n          ',(null as any));
-    this._el_47 = this.renderer.createElement(this._el_33,'td',(null as any));
-    this._text_48 = this.renderer.createText(this._el_47,'0.23',(null as any));
-    this._text_49 = this.renderer.createText(this._el_33,'\n          ',(null as any));
-    this._el_50 = this.renderer.createElement(this._el_33,'td',(null as any));
-    this._text_51 = this.renderer.createText(this._el_50,'9h23:43',(null as any));
-    this._text_52 = this.renderer.createText(this._el_33,'\n          ',(null as any));
-    this._el_53 = this.renderer.createElement(this._el_33,'td',(null as any));
-    this._text_54 = this.renderer.createText(this._el_53,'del-cli public/js/app',(null as any));
-    this._text_55 = this.renderer.createText(this._el_33,'\n        ',(null as any));
-    this._text_56 = this.renderer.createText(this._el_31,'\n        ',(null as any));
-    this._el_57 = this.renderer.createElement(this._el_31,'tr',(null as any));
-    this._text_58 = this.renderer.createText(this._el_57,'\n          ',(null as any));
-    this._el_59 = this.renderer.createElement(this._el_57,'td',(null as any));
-    this._text_60 = this.renderer.createText(this._el_59,'12648',(null as any));
-    this._text_61 = this.renderer.createText(this._el_57,'\n          ',(null as any));
-    this._el_62 = this.renderer.createElement(this._el_57,'td',(null as any));
-    this._text_63 = this.renderer.createText(this._el_62,'root',(null as any));
-    this._text_64 = this.renderer.createText(this._el_57,'\n          ',(null as any));
-    this._el_65 = this.renderer.createElement(this._el_57,'td',(null as any));
-    this._text_66 = this.renderer.createText(this._el_65,'dummy process',(null as any));
-    this._text_67 = this.renderer.createText(this._el_57,'\n          ',(null as any));
-    this._el_68 = this.renderer.createElement(this._el_57,'td',(null as any));
-    this._text_69 = this.renderer.createText(this._el_68,'1860',(null as any));
-    this._text_70 = this.renderer.createText(this._el_57,'\n          ',(null as any));
-    this._el_71 = this.renderer.createElement(this._el_57,'td',(null as any));
-    this._text_72 = this.renderer.createText(this._el_71,'0.23',(null as any));
-    this._text_73 = this.renderer.createText(this._el_57,'\n          ',(null as any));
-    this._el_74 = this.renderer.createElement(this._el_57,'td',(null as any));
-    this._text_75 = this.renderer.createText(this._el_74,'9h23:43',(null as any));
-    this._text_76 = this.renderer.createText(this._el_57,'\n          ',(null as any));
-    this._el_77 = this.renderer.createElement(this._el_57,'td',(null as any));
-    this._text_78 = this.renderer.createText(this._el_77,'del-cli public/js/app',(null as any));
-    this._text_79 = this.renderer.createText(this._el_57,'\n        ',(null as any));
-    this._text_80 = this.renderer.createText(this._el_31,'\n        ',(null as any));
-    this._el_81 = this.renderer.createElement(this._el_31,'tr',(null as any));
-    this._text_82 = this.renderer.createText(this._el_81,'\n          ',(null as any));
-    this._el_83 = this.renderer.createElement(this._el_81,'td',(null as any));
-    this._text_84 = this.renderer.createText(this._el_83,'12648',(null as any));
-    this._text_85 = this.renderer.createText(this._el_81,'\n          ',(null as any));
-    this._el_86 = this.renderer.createElement(this._el_81,'td',(null as any));
-    this._text_87 = this.renderer.createText(this._el_86,'root',(null as any));
-    this._text_88 = this.renderer.createText(this._el_81,'\n          ',(null as any));
-    this._el_89 = this.renderer.createElement(this._el_81,'td',(null as any));
-    this._text_90 = this.renderer.createText(this._el_89,'dummy process',(null as any));
-    this._text_91 = this.renderer.createText(this._el_81,'\n          ',(null as any));
-    this._el_92 = this.renderer.createElement(this._el_81,'td',(null as any));
-    this._text_93 = this.renderer.createText(this._el_92,'1860',(null as any));
-    this._text_94 = this.renderer.createText(this._el_81,'\n          ',(null as any));
-    this._el_95 = this.renderer.createElement(this._el_81,'td',(null as any));
-    this._text_96 = this.renderer.createText(this._el_95,'0.23',(null as any));
-    this._text_97 = this.renderer.createText(this._el_81,'\n          ',(null as any));
-    this._el_98 = this.renderer.createElement(this._el_81,'td',(null as any));
-    this._text_99 = this.renderer.createText(this._el_98,'9h23:43',(null as any));
-    this._text_100 = this.renderer.createText(this._el_81,'\n          ',(null as any));
-    this._el_101 = this.renderer.createElement(this._el_81,'td',(null as any));
-    this._text_102 = this.renderer.createText(this._el_101,'del-cli public/js/app',(null as any));
-    this._text_103 = this.renderer.createText(this._el_81,'\n        ',(null as any));
-    this._text_104 = this.renderer.createText(this._el_31,'\n        ',(null as any));
-    this._el_105 = this.renderer.createElement(this._el_31,'tr',(null as any));
-    this._text_106 = this.renderer.createText(this._el_105,'\n          ',(null as any));
-    this._el_107 = this.renderer.createElement(this._el_105,'td',(null as any));
-    this._text_108 = this.renderer.createText(this._el_107,'12648',(null as any));
-    this._text_109 = this.renderer.createText(this._el_105,'\n          ',(null as any));
-    this._el_110 = this.renderer.createElement(this._el_105,'td',(null as any));
-    this._text_111 = this.renderer.createText(this._el_110,'root',(null as any));
-    this._text_112 = this.renderer.createText(this._el_105,'\n          ',(null as any));
-    this._el_113 = this.renderer.createElement(this._el_105,'td',(null as any));
-    this._text_114 = this.renderer.createText(this._el_113,'dummy process',(null as any));
-    this._text_115 = this.renderer.createText(this._el_105,'\n          ',(null as any));
-    this._el_116 = this.renderer.createElement(this._el_105,'td',(null as any));
-    this._text_117 = this.renderer.createText(this._el_116,'1860',(null as any));
-    this._text_118 = this.renderer.createText(this._el_105,'\n          ',(null as any));
-    this._el_119 = this.renderer.createElement(this._el_105,'td',(null as any));
-    this._text_120 = this.renderer.createText(this._el_119,'0.23',(null as any));
-    this._text_121 = this.renderer.createText(this._el_105,'\n          ',(null as any));
-    this._el_122 = this.renderer.createElement(this._el_105,'td',(null as any));
-    this._text_123 = this.renderer.createText(this._el_122,'9h23:43',(null as any));
-    this._text_124 = this.renderer.createText(this._el_105,'\n          ',(null as any));
-    this._el_125 = this.renderer.createElement(this._el_105,'td',(null as any));
-    this._text_126 = this.renderer.createText(this._el_125,'del-cli public/js/app',(null as any));
-    this._text_127 = this.renderer.createText(this._el_105,'\n        ',(null as any));
-    this._text_128 = this.renderer.createText(this._el_31,'\n        ',(null as any));
-    this._el_129 = this.renderer.createElement(this._el_31,'tr',(null as any));
-    this._text_130 = this.renderer.createText(this._el_129,'\n          ',(null as any));
-    this._el_131 = this.renderer.createElement(this._el_129,'td',(null as any));
-    this._text_132 = this.renderer.createText(this._el_131,'12648',(null as any));
-    this._text_133 = this.renderer.createText(this._el_129,'\n          ',(null as any));
-    this._el_134 = this.renderer.createElement(this._el_129,'td',(null as any));
-    this._text_135 = this.renderer.createText(this._el_134,'root',(null as any));
-    this._text_136 = this.renderer.createText(this._el_129,'\n          ',(null as any));
-    this._el_137 = this.renderer.createElement(this._el_129,'td',(null as any));
-    this._text_138 = this.renderer.createText(this._el_137,'dummy process',(null as any));
-    this._text_139 = this.renderer.createText(this._el_129,'\n          ',(null as any));
-    this._el_140 = this.renderer.createElement(this._el_129,'td',(null as any));
-    this._text_141 = this.renderer.createText(this._el_140,'1860',(null as any));
-    this._text_142 = this.renderer.createText(this._el_129,'\n          ',(null as any));
-    this._el_143 = this.renderer.createElement(this._el_129,'td',(null as any));
-    this._text_144 = this.renderer.createText(this._el_143,'0.23',(null as any));
-    this._text_145 = this.renderer.createText(this._el_129,'\n          ',(null as any));
-    this._el_146 = this.renderer.createElement(this._el_129,'td',(null as any));
-    this._text_147 = this.renderer.createText(this._el_146,'9h23:43',(null as any));
-    this._text_148 = this.renderer.createText(this._el_129,'\n          ',(null as any));
-    this._el_149 = this.renderer.createElement(this._el_129,'td',(null as any));
-    this._text_150 = this.renderer.createText(this._el_149,'del-cli public/js/app',(null as any));
-    this._text_151 = this.renderer.createText(this._el_129,'\n        ',(null as any));
-    this._text_152 = this.renderer.createText(this._el_31,'\n        ',(null as any));
-    this._el_153 = this.renderer.createElement(this._el_31,'tr',(null as any));
-    this._text_154 = this.renderer.createText(this._el_153,'\n          ',(null as any));
-    this._el_155 = this.renderer.createElement(this._el_153,'td',(null as any));
-    this._text_156 = this.renderer.createText(this._el_155,'12648',(null as any));
-    this._text_157 = this.renderer.createText(this._el_153,'\n          ',(null as any));
-    this._el_158 = this.renderer.createElement(this._el_153,'td',(null as any));
-    this._text_159 = this.renderer.createText(this._el_158,'root',(null as any));
-    this._text_160 = this.renderer.createText(this._el_153,'\n          ',(null as any));
-    this._el_161 = this.renderer.createElement(this._el_153,'td',(null as any));
-    this._text_162 = this.renderer.createText(this._el_161,'dummy process',(null as any));
-    this._text_163 = this.renderer.createText(this._el_153,'\n          ',(null as any));
-    this._el_164 = this.renderer.createElement(this._el_153,'td',(null as any));
-    this._text_165 = this.renderer.createText(this._el_164,'1860',(null as any));
-    this._text_166 = this.renderer.createText(this._el_153,'\n          ',(null as any));
-    this._el_167 = this.renderer.createElement(this._el_153,'td',(null as any));
-    this._text_168 = this.renderer.createText(this._el_167,'0.23',(null as any));
-    this._text_169 = this.renderer.createText(this._el_153,'\n          ',(null as any));
-    this._el_170 = this.renderer.createElement(this._el_153,'td',(null as any));
-    this._text_171 = this.renderer.createText(this._el_170,'9h23:43',(null as any));
-    this._text_172 = this.renderer.createText(this._el_153,'\n          ',(null as any));
-    this._el_173 = this.renderer.createElement(this._el_153,'td',(null as any));
-    this._text_174 = this.renderer.createText(this._el_173,'del-cli public/js/app',(null as any));
-    this._text_175 = this.renderer.createText(this._el_153,'\n        ',(null as any));
-    this._text_176 = this.renderer.createText(this._el_31,'\n        ',(null as any));
-    this._el_177 = this.renderer.createElement(this._el_31,'tr',(null as any));
-    this._text_178 = this.renderer.createText(this._el_177,'\n          ',(null as any));
-    this._el_179 = this.renderer.createElement(this._el_177,'td',(null as any));
-    this._text_180 = this.renderer.createText(this._el_179,'12648',(null as any));
-    this._text_181 = this.renderer.createText(this._el_177,'\n          ',(null as any));
-    this._el_182 = this.renderer.createElement(this._el_177,'td',(null as any));
-    this._text_183 = this.renderer.createText(this._el_182,'root',(null as any));
-    this._text_184 = this.renderer.createText(this._el_177,'\n          ',(null as any));
-    this._el_185 = this.renderer.createElement(this._el_177,'td',(null as any));
-    this._text_186 = this.renderer.createText(this._el_185,'dummy process',(null as any));
-    this._text_187 = this.renderer.createText(this._el_177,'\n          ',(null as any));
-    this._el_188 = this.renderer.createElement(this._el_177,'td',(null as any));
-    this._text_189 = this.renderer.createText(this._el_188,'1860',(null as any));
-    this._text_190 = this.renderer.createText(this._el_177,'\n          ',(null as any));
-    this._el_191 = this.renderer.createElement(this._el_177,'td',(null as any));
-    this._text_192 = this.renderer.createText(this._el_191,'0.23',(null as any));
-    this._text_193 = this.renderer.createText(this._el_177,'\n          ',(null as any));
-    this._el_194 = this.renderer.createElement(this._el_177,'td',(null as any));
-    this._text_195 = this.renderer.createText(this._el_194,'9h23:43',(null as any));
-    this._text_196 = this.renderer.createText(this._el_177,'\n          ',(null as any));
-    this._el_197 = this.renderer.createElement(this._el_177,'td',(null as any));
-    this._text_198 = this.renderer.createText(this._el_197,'del-cli public/js/app',(null as any));
-    this._text_199 = this.renderer.createText(this._el_177,'\n        ',(null as any));
-    this._text_200 = this.renderer.createText(this._el_31,'\n      ',(null as any));
-    this._text_201 = this.renderer.createText(this._el_2,'\n    ',(null as any));
-    this._text_202 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this._el_0 = this.renderer.createElement(parentRenderNode,'td',(null as any));
+    this._text_1 = this.renderer.createText(this._el_0,'',(null as any));
+    this._text_2 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._el_3 = this.renderer.createElement(parentRenderNode,'td',(null as any));
+    this._text_4 = this.renderer.createText(this._el_3,'',(null as any));
+    this._text_5 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._el_6 = this.renderer.createElement(parentRenderNode,'td',(null as any));
+    this._text_7 = this.renderer.createText(this._el_6,'',(null as any));
+    this._text_8 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._el_9 = this.renderer.createElement(parentRenderNode,'td',(null as any));
+    this._text_10 = this.renderer.createText(this._el_9,'',(null as any));
+    this._text_11 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._el_12 = this.renderer.createElement(parentRenderNode,'td',(null as any));
+    this._text_13 = this.renderer.createText(this._el_12,'',(null as any));
+    this._text_14 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._el_15 = this.renderer.createElement(parentRenderNode,'td',(null as any));
+    this._text_16 = this.renderer.createText(this._el_15,'',(null as any));
+    this._text_17 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._el_18 = this.renderer.createElement(parentRenderNode,'td',(null as any));
+    this._text_19 = this.renderer.createText(this._el_18,'',(null as any));
+    this._expr_0 = import7.UNINITIALIZED;
+    this._expr_1 = import7.UNINITIALIZED;
+    this._expr_2 = import7.UNINITIALIZED;
+    this._expr_3 = import7.UNINITIALIZED;
+    this._expr_4 = import7.UNINITIALIZED;
+    this._expr_5 = import7.UNINITIALIZED;
+    this._expr_6 = import7.UNINITIALIZED;
     this.init([],[
       this._el_0,
       this._text_1,
-      this._el_2,
-      this._text_3,
-      this._el_4,
+      this._text_2,
+      this._el_3,
+      this._text_4,
       this._text_5,
       this._el_6,
       this._text_7,
-      this._el_8,
-      this._text_9,
+      this._text_8,
+      this._el_9,
       this._text_10,
-      this._el_11,
-      this._text_12,
+      this._text_11,
+      this._el_12,
       this._text_13,
-      this._el_14,
-      this._text_15,
+      this._text_14,
+      this._el_15,
       this._text_16,
-      this._el_17,
-      this._text_18,
-      this._text_19,
-      this._el_20,
-      this._text_21,
-      this._text_22,
-      this._el_23,
-      this._text_24,
-      this._text_25,
-      this._el_26,
-      this._text_27,
-      this._text_28,
-      this._text_29,
-      this._text_30,
-      this._el_31,
-      this._text_32,
-      this._el_33,
-      this._text_34,
-      this._el_35,
-      this._text_36,
-      this._text_37,
-      this._el_38,
-      this._text_39,
-      this._text_40,
-      this._el_41,
-      this._text_42,
-      this._text_43,
-      this._el_44,
-      this._text_45,
-      this._text_46,
-      this._el_47,
-      this._text_48,
-      this._text_49,
-      this._el_50,
-      this._text_51,
-      this._text_52,
-      this._el_53,
-      this._text_54,
-      this._text_55,
-      this._text_56,
-      this._el_57,
-      this._text_58,
-      this._el_59,
-      this._text_60,
-      this._text_61,
-      this._el_62,
-      this._text_63,
-      this._text_64,
-      this._el_65,
-      this._text_66,
-      this._text_67,
-      this._el_68,
-      this._text_69,
-      this._text_70,
-      this._el_71,
-      this._text_72,
-      this._text_73,
-      this._el_74,
-      this._text_75,
-      this._text_76,
-      this._el_77,
-      this._text_78,
-      this._text_79,
-      this._text_80,
-      this._el_81,
-      this._text_82,
-      this._el_83,
-      this._text_84,
-      this._text_85,
-      this._el_86,
-      this._text_87,
-      this._text_88,
-      this._el_89,
-      this._text_90,
-      this._text_91,
-      this._el_92,
-      this._text_93,
-      this._text_94,
-      this._el_95,
-      this._text_96,
-      this._text_97,
-      this._el_98,
-      this._text_99,
-      this._text_100,
-      this._el_101,
-      this._text_102,
-      this._text_103,
-      this._text_104,
-      this._el_105,
-      this._text_106,
-      this._el_107,
-      this._text_108,
-      this._text_109,
-      this._el_110,
-      this._text_111,
-      this._text_112,
-      this._el_113,
-      this._text_114,
-      this._text_115,
-      this._el_116,
-      this._text_117,
-      this._text_118,
-      this._el_119,
-      this._text_120,
-      this._text_121,
-      this._el_122,
-      this._text_123,
-      this._text_124,
-      this._el_125,
-      this._text_126,
-      this._text_127,
-      this._text_128,
-      this._el_129,
-      this._text_130,
-      this._el_131,
-      this._text_132,
-      this._text_133,
-      this._el_134,
-      this._text_135,
-      this._text_136,
-      this._el_137,
-      this._text_138,
-      this._text_139,
-      this._el_140,
-      this._text_141,
-      this._text_142,
-      this._el_143,
-      this._text_144,
-      this._text_145,
-      this._el_146,
-      this._text_147,
-      this._text_148,
-      this._el_149,
-      this._text_150,
-      this._text_151,
-      this._text_152,
-      this._el_153,
-      this._text_154,
-      this._el_155,
-      this._text_156,
-      this._text_157,
-      this._el_158,
-      this._text_159,
-      this._text_160,
-      this._el_161,
-      this._text_162,
-      this._text_163,
-      this._el_164,
-      this._text_165,
-      this._text_166,
-      this._el_167,
-      this._text_168,
-      this._text_169,
-      this._el_170,
-      this._text_171,
-      this._text_172,
-      this._el_173,
-      this._text_174,
-      this._text_175,
-      this._text_176,
-      this._el_177,
-      this._text_178,
-      this._el_179,
-      this._text_180,
-      this._text_181,
-      this._el_182,
-      this._text_183,
-      this._text_184,
-      this._el_185,
-      this._text_186,
-      this._text_187,
-      this._el_188,
-      this._text_189,
-      this._text_190,
-      this._el_191,
-      this._text_192,
-      this._text_193,
-      this._el_194,
-      this._text_195,
-      this._text_196,
-      this._el_197,
-      this._text_198,
-      this._text_199,
-      this._text_200,
-      this._text_201,
-      this._text_202
+      this._text_17,
+      this._el_18,
+      this._text_19
     ]
     ,[],[]);
     return (null as any);
   }
+  detectChangesInternal(throwOnChange:boolean):void {
+    this.detectContentChildrenChanges(throwOnChange);
+    const currVal_0:any = import4.interpolate(1,'',this.context.task.pid,'');
+    if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
+      this.renderer.setText(this._text_1,currVal_0);
+      this._expr_0 = currVal_0;
+    }
+    const currVal_1:any = import4.interpolate(1,'',this.context.task.user,'');
+    if (import4.checkBinding(throwOnChange,this._expr_1,currVal_1)) {
+      this.renderer.setText(this._text_4,currVal_1);
+      this._expr_1 = currVal_1;
+    }
+    const currVal_2:any = import4.interpolate(1,'',this.context.task.name,'');
+    if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
+      this.renderer.setText(this._text_7,currVal_2);
+      this._expr_2 = currVal_2;
+    }
+    const currVal_3:any = import4.interpolate(1,'',this.context.task.res,'');
+    if (import4.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
+      this.renderer.setText(this._text_10,currVal_3);
+      this._expr_3 = currVal_3;
+    }
+    const currVal_4:any = import4.interpolate(1,'',this.context.task.mem,'');
+    if (import4.checkBinding(throwOnChange,this._expr_4,currVal_4)) {
+      this.renderer.setText(this._text_13,currVal_4);
+      this._expr_4 = currVal_4;
+    }
+    const currVal_5:any = import4.interpolate(1,'',this.context.task.time,'');
+    if (import4.checkBinding(throwOnChange,this._expr_5,currVal_5)) {
+      this.renderer.setText(this._text_16,currVal_5);
+      this._expr_5 = currVal_5;
+    }
+    const currVal_6:any = import4.interpolate(1,'',this.context.task.command,'');
+    if (import4.checkBinding(throwOnChange,this._expr_6,currVal_6)) {
+      this.renderer.setText(this._text_19,currVal_6);
+      this._expr_6 = currVal_6;
+    }
+    this.detectViewChildrenChanges(throwOnChange);
+  }
 }
 export function viewFactory_TasksComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.TasksComponent> {
-  if ((renderType_TasksComponent === (null as any))) { (renderType_TasksComponent = viewUtils.createRenderComponentType('C:/github/demo-nodejs-ng2-socketio-d3/assets/app/tasks/task.component.html',0,import9.ViewEncapsulation.Emulated,styles_TasksComponent,{})); }
+  if ((renderType_TasksComponent === (null as any))) { (renderType_TasksComponent = viewUtils.createRenderComponentType('C:/github/modata/assets/app/tasks/tasks.component.html',0,import9.ViewEncapsulation.Emulated,styles_TasksComponent,{})); }
   return new _View_TasksComponent0(viewUtils,parentInjector,declarationEl);
 }

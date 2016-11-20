@@ -37,6 +37,11 @@ class _View_CpusComponent_Host0 extends import1.AppView<any> {
     if (((token === import3.CpusComponent) && (0 === requestNodeIndex))) { return this._CpusComponent_0_4; }
     return notFoundResult;
   }
+  detectChangesInternal(throwOnChange:boolean):void {
+    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._CpusComponent_0_4.ngOnInit(); }
+    this.detectContentChildrenChanges(throwOnChange);
+    this.detectViewChildrenChanges(throwOnChange);
+  }
 }
 function viewFactory_CpusComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
   if ((renderType_CpusComponent_Host === (null as any))) { (renderType_CpusComponent_Host = viewUtils.createRenderComponentType('',0,import9.ViewEncapsulation.None,[],{})); }
@@ -288,9 +293,14 @@ class _View_CpusComponent0 extends import1.AppView<import3.CpusComponent> {
   _el_239:any;
   _text_240:any;
   _text_241:any;
-  _text_242:any;
+  _el_242:any;
   _text_243:any;
-  _text_244:any;
+  _el_244:any;
+  _text_245:any;
+  _text_246:any;
+  _text_247:any;
+  _text_248:any;
+  _text_249:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_CpusComponent0,renderType_CpusComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -613,10 +623,19 @@ class _View_CpusComponent0 extends import1.AppView<import3.CpusComponent> {
     this._el_239 = this.renderer.createElement(this._el_237,'span',(null as any));
     this.renderer.setElementAttribute(this._el_239,'class','white');
     this._text_240 = this.renderer.createText(this._el_239,'20 days, 11:57:29',(null as any));
-    this._text_241 = this.renderer.createText(this._el_235,'\n        ',(null as any));
-    this._text_242 = this.renderer.createText(this._el_211,'\n\n      ',(null as any));
-    this._text_243 = this.renderer.createText(this._el_2,'\n    ',(null as any));
-    this._text_244 = this.renderer.createText(this._el_0,'\n  ',(null as any));
+    this._text_241 = this.renderer.createText(this._el_235,'\n          ',(null as any));
+    this._el_242 = this.renderer.createElement(this._el_235,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_242,'class','col-md-12');
+    this._text_243 = this.renderer.createText(this._el_242,'\n            ',(null as any));
+    this._el_244 = this.renderer.createElement(this._el_242,':svg:svg',(null as any));
+    this.renderer.setElementAttribute(this._el_244,'height','120');
+    this.renderer.setElementAttribute(this._el_244,'id','visualisation');
+    this.renderer.setElementAttribute(this._el_244,'width','800');
+    this._text_245 = this.renderer.createText(this._el_242,'\n          ',(null as any));
+    this._text_246 = this.renderer.createText(this._el_235,'\n        ',(null as any));
+    this._text_247 = this.renderer.createText(this._el_211,'\n\n      ',(null as any));
+    this._text_248 = this.renderer.createText(this._el_2,'\n    ',(null as any));
+    this._text_249 = this.renderer.createText(this._el_0,'\n  ',(null as any));
     this.init([],[
       this._el_0,
       this._text_1,
@@ -860,15 +879,20 @@ class _View_CpusComponent0 extends import1.AppView<import3.CpusComponent> {
       this._el_239,
       this._text_240,
       this._text_241,
-      this._text_242,
+      this._el_242,
       this._text_243,
-      this._text_244
+      this._el_244,
+      this._text_245,
+      this._text_246,
+      this._text_247,
+      this._text_248,
+      this._text_249
     ]
     ,[],[]);
     return (null as any);
   }
 }
 export function viewFactory_CpusComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.CpusComponent> {
-  if ((renderType_CpusComponent === (null as any))) { (renderType_CpusComponent = viewUtils.createRenderComponentType('C:/github/demo-nodejs-ng2-socketio-d3/assets/app/cpus/cpus.component.html',0,import9.ViewEncapsulation.Emulated,styles_CpusComponent,{})); }
+  if ((renderType_CpusComponent === (null as any))) { (renderType_CpusComponent = viewUtils.createRenderComponentType('C:/github/modata/assets/app/cpus/cpus.component.html',0,import9.ViewEncapsulation.Emulated,styles_CpusComponent,{})); }
   return new _View_CpusComponent0(viewUtils,parentInjector,declarationEl);
 }

@@ -88,6 +88,6 @@ class _View_LogoutComponent0 extends import1.AppView<import3.LogoutComponent> {
   }
 }
 export function viewFactory_LogoutComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.LogoutComponent> {
-  if ((renderType_LogoutComponent === (null as any))) { (renderType_LogoutComponent = viewUtils.createRenderComponentType('C:/github/demo-nodejs-ng2-socketio-d3/assets/app/auth/logout.component.ts class LogoutComponent - inline template',0,import10.ViewEncapsulation.None,styles_LogoutComponent,{})); }
+  if ((renderType_LogoutComponent === (null as any))) { (renderType_LogoutComponent = viewUtils.createRenderComponentType('C:/github/modata/assets/app/auth/logout.component.ts class LogoutComponent - inline template',0,import10.ViewEncapsulation.None,styles_LogoutComponent,{})); }
   return new _View_LogoutComponent0(viewUtils,parentInjector,declarationEl);
 }

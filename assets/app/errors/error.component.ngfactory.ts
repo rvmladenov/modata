@@ -246,6 +246,6 @@ class _View_ErrorComponent0 extends import1.AppView<import3.ErrorComponent> {
   }
 }
 export function viewFactory_ErrorComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.ErrorComponent> {
-  if ((renderType_ErrorComponent === (null as any))) { (renderType_ErrorComponent = viewUtils.createRenderComponentType('C:/github/demo-nodejs-ng2-socketio-d3/assets/app/errors/error.component.html',0,import9.ViewEncapsulation.Emulated,styles_ErrorComponent,{})); }
+  if ((renderType_ErrorComponent === (null as any))) { (renderType_ErrorComponent = viewUtils.createRenderComponentType('C:/github/modata/assets/app/errors/error.component.html',0,import9.ViewEncapsulation.Emulated,styles_ErrorComponent,{})); }
   return new _View_ErrorComponent0(viewUtils,parentInjector,declarationEl);
 }
