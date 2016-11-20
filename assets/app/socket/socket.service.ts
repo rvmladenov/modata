@@ -22,7 +22,7 @@ export class SocketService {
     cpus: EventEmitter<Cpu> = new EventEmitter<Cpu>();
 
     constructor(private errorService: ErrorService) {
-        this.socket = io(APP_CONSTANTS.BACKEND_URL, {secure: true});
+        this.socket = io(APP_CONSTANTS.BACKEND_URL);
 
         this.socket.on("new-tasks", (data)=> {
             this.tasks.emit(data);
