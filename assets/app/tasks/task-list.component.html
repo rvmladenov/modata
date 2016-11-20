@@ -1,7 +1,9 @@
 <div class="col-md-8 col-md-offset-2">
     <div class="container-fluid">
-        <label for="searchValue" class="form-label">Search by Name:</label>
-        <input type="text" [(ngModel)]="searchValue" id="searchValue" />
+        <div class="col-md-12">
+            <label for="searchValue" class="form-label" id="searchValueLabel">Search by Name:</label>
+            <input type="text" [(ngModel)]="searchValue" id="searchValue" />
+        </div>
         
         <table class="table table-bordered table-sm data-table">
         <thead>
