@@ -21,7 +21,7 @@ export class CpuService {
                 let transformedCpus: Cpu[] = [];
 
                 for (let cpu of cpus) {
-                    transformedCpus.push(new Cpu(cpu.id, cpu.percentUsage, cpu.user));
+                    transformedCpus.push(new Cpu(cpu.id, cpu.percentUsage));
                 }
                 this.cpus = transformedCpus;
                 return transformedCpus;

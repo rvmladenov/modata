@@ -17,6 +17,8 @@ import { CpuModule } from "./cpus/cpu.module";
 import { CpusComponent } from "./cpus/cpus.component";
 import { CpuService } from "./cpus/cpu.service";
 
+import { SocketService } from './socket/socket.service';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -32,7 +34,12 @@ import { CpuService } from "./cpus/cpu.service";
         TaskModule,
         CpuModule
     ],
-    providers: [AuthService, ErrorService, TaskService, CpuService],
+    providers: [
+        AuthService, 
+        ErrorService, 
+        TaskService, 
+        CpuService,
+        SocketService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

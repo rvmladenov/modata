@@ -6,8 +6,11 @@ import { TasksComponent } from "./tasks.component";
 import { TaskListComponent } from "./task-list.component";
 import { TaskService } from "./task.service";
 
+import { SearchTasksPipe } from './search.filter.pipe';
+import { SortByPipe } from './sort-by.filter';
+
 @NgModule({
-    declarations: [TasksComponent, TaskListComponent],
+    declarations: [TasksComponent, TaskListComponent, SearchTasksPipe, SortByPipe],
     imports: [
         CommonModule,
         FormsModule

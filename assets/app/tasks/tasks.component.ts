@@ -1,20 +1,25 @@
-import { Component, Input } from "@angular/core";
+import { Component, HostListener, Input, ElementRef, Renderer } from "@angular/core";
 
 import { Task } from "./task.model";
-import { TaskService } from "./task.service";
 
 @Component({
-    selector: 'app-task',
-    templateUrl: './task.component.html',
+    selector: '[app-task]',
+    templateUrl: './tasks.component.html',
     styles: ['./tasks.scss']
 })
 export class TasksComponent {
     @Input() task: Task;
 
-    constructor(private taskService: TaskService) {}
+    constructor(private el: ElementRef, private renderer: Renderer) { }
+    @HostListener('mouseenter') onMouseEnter() {
+        this.highlight('deepskyblue');
+    }
 
-    belongsToUser() {
-        //TODO: Uncomment this in case the authentication module is implemented
-        // return localStorage.getItem('userId') == this.message.userId;
+    @HostListener('mouseleave') onMouseLeave() {
+        this.highlight(null);
+    }
+
+    private highlight(color: string) {
+        this.renderer.setElementStyle(this.el.nativeElement, 'backgroundColor', color);
     }
 }

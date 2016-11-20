@@ -3,9 +3,8 @@ import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { APP_CONSTANTS } from './shared/constants';
 
 import { TaskService } from "./tasks/task.service";
+import { SocketService } from './socket/socket.service';
 
-declare var io:any; /* imports the d3 lib */
- 
 @Component({
     selector: 'my-app',
     templateUrl: './app.component.html',
@@ -16,10 +15,12 @@ export class AppComponent {
 
     socket: any;
 
-    ngOnInit() {
-        /* Initializing the socket io(connecting to server) */
-        this.socket = io(APP_CONSTANTS.BACKEND_URL);
-    }
+    constructor(public socketService: SocketService) {}
+
+    // ngOnInit() {
+    //     /* Initializing the socket io(connecting to server) */
+    //     this.socket = io(APP_CONSTANTS.BACKEND_URL);
+    // }
 
     testSocket() {
         console.log('Emiting data');

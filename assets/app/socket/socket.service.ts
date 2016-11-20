@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter, OnInit } from "@angular/core";
+import { Injectable, EventEmitter } from "@angular/core";
 import 'rxjs/Rx';
 import { Observable } from "rxjs";
 
@@ -14,30 +14,25 @@ declare var io:any; /* the socket io - declare it here so it would not crash the
 @Injectable()
 export class SocketService {
     socket: any;
-
-    private tasks: Task[] = [];
-    newTasks = new EventEmitter<Task>();
-    cpus = new EventEmitter<Cpu>();
+    
+    /**
+     * You need to subscribe to these emitters in case you want to get the latest data
+     */
+    tasks: EventEmitter<Task> = new EventEmitter<Task>()
+    cpus: EventEmitter<Cpu> = new EventEmitter<Cpu>();
 
     constructor(private errorService: ErrorService) {
         this.socket = io(APP_CONSTANTS.BACKEND_URL);
-    }
 
-    ngOnInit() {
-        //TODO: Sample emit socket.io - delete it if not using it
-        // this.socket.emit('new-task', { my: 'data' });
-
-        this.socket.on("new-tasks", function(data) {
-            this.newTasks.emit(data);
-            console.log("New tasks: " + data);
+        this.socket.on("new-tasks", (data)=> {
+            this.tasks.emit(data);
+            console.log("Receiving new Task data");
         });
 
-        this.socket.on("cpus", function(data) {
+        this.socket.on("cpus", (data)=> {
             this.cpus.emit(data);
-            console.log("CPUs: " + data);
+            console.log("Receiving new CPU data");
         });
-    
-        //TODO: Is there going to be more staff in here ?
     }
 
     shutdownServer() {

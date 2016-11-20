@@ -7,14 +7,6 @@ var Task = require('../models/task');
 
 router.get('/', function (req, res, next) {
     Task.find()
-        
-        
-        
-        
-        .populate('user', 'firstName')/*TODO: reference to user table - remove it if not needed */
-
-
-
         .exec(function (err, tasks) {
             if (err) {
                 return res.status(500).json({
@@ -31,7 +23,7 @@ router.get('/', function (req, res, next) {
 
 // Use this middleware to define the authentication section
 
-//TODO: may not be needed here in this app but leave it here for now anyway :)
+//TODO: may not be needed here in this app but leave it for now anyway :)
 router.use('/', function (req, res, next) {
     jwt.verify(req.query.token, 'secret', function (err, decoded) {
         if (err) {

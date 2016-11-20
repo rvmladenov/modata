@@ -39,23 +39,45 @@ server.on('listening', onListening);
  */
 
 io.on('connection', function (socket) {
-  // TODO: The socket server is up but the emitting of data is not added:
-  // emit: "new-tasks", "cpus"
-  // receives: "server"
-  // Example: socket.emit('news', { hello: 'world' });
+
+  initDataFlowMock(socket);
+
 
   /**
    * The server should shutdown upon requesting(shout be an authorized user)
    */
-  socket.on('server', function (data) {
-    console.log(data);
+  socket.on('shutdown', function (data) {
+      socket.socket.transport.websocket.finishClose();
+      io.server.close();
   });
-
-
-
-
-
 });
+
+var initDataFlowMock = function(socket) {
+  /**
+   * Sample Data Emitter 
+   */
+  setInterval(function() {
+    console.log("Emitting new data...");
+
+    let task = {
+      tasks: [
+        {
+          pid: "212",
+          name: 'process',
+          res: 32,
+          mem: 65,
+          time: 23,
+          command: 'dummy command',
+          user: 'root'
+        }
+      ]
+    };
+    socket.emit('new-tasks', task);
+    // socket.emit('cpus', task);
+    // socket.on('shutdown', task);
+  }, 3000);
+}
+
 
 /**
  * Normalize a port into a number, string, or false.

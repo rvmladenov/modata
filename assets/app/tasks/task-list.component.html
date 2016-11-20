@@ -1,3 +1,27 @@
 <div class="col-md-8 col-md-offset-2">
-    <app-task></app-task>
+    <div class="container-fluid">
+        <label for="searchValue" class="form-label">Search by Name:</label>
+        <input type="text" [(ngModel)]="searchValue" id="searchValue" />
+        
+        <table class="table table-bordered table-sm data-table">
+        <thead>
+            <tr>
+            <th><a (click)="filterByID()" class="btn btn-xs glyphicon glyphicon-resize-vertical" role="button" [ngClass]="{'white': byId != undefined}"></a>PID</th>
+            <th><a (click)="filterByName()" class="btn btn-xs glyphicon glyphicon-resize-vertical" role="button" [ngClass]="{'white': byName != undefined}"></a>User</th>
+            <th>Name</th>
+            <th>RES</th>
+            <th>MEM%</th>
+            <th>TIME+</th>
+            <th class="col-md-3">Command</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr app-task [task]="task" *ngFor="let task of tasks | search: searchValue | sortBy: ['pid', byId] | sortBy: ['name', byName]"></tr>
+        </tbody>
+        </table>
+    </div>
 </div>
+
+<footer>
+  <button>Terminate</button>
+</footer>
