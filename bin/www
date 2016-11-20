@@ -59,7 +59,7 @@ var initDataFlowMock = function(socket) {
   setInterval(function() {
     console.log("Emitting new data...");
 
-    let task = {
+    var task = {
       tasks: [
         {
           pid: "212",
