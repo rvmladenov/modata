@@ -16,7 +16,7 @@ import * as import7 from '@angular/core/src/change_detection/change_detection';
 import * as import8 from './socket/socket.service';
 import * as import9 from '@angular/core/src/metadata/view';
 import * as import10 from '@angular/core/src/linker/component_factory';
-import * as import11 from './styles.scss';
+import * as import11 from './styles.scss.shim';
 import * as import12 from './header.component';
 import * as import13 from '@angular/router/src/directives/router_outlet';
 import * as import14 from './errors/error.component';
@@ -130,7 +130,7 @@ var _View_AppComponent0 = (function (_super) {
 }(import1.AppView));
 export function viewFactory_AppComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_AppComponent === null)) {
-        (renderType_AppComponent = viewUtils.createRenderComponentType('C:/github/modata/assets/app/app.component.html', 0, import9.ViewEncapsulation.None, styles_AppComponent, {}));
+        (renderType_AppComponent = viewUtils.createRenderComponentType('C:/github/modata/assets/app/app.component.html', 0, import9.ViewEncapsulation.Emulated, styles_AppComponent, {}));
     }
     return new _View_AppComponent0(viewUtils, parentInjector, declarationEl);
 }
