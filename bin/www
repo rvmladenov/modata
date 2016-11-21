@@ -99,7 +99,8 @@ var initDataFlowMock = function(socket) {
   }, 2200);
 }
 
-function getRandomNumber(maxNumber = 100) {
+function getRandomNumber(maxNumber) {
+  maxNumber = maxNumber || 100;
   return Math.floor(Math.random()*maxNumber);
 }
 
