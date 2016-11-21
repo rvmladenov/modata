@@ -54,16 +54,16 @@ io.on('connection', function (socket) {
 
 var initDataFlowMock = function(socket) {
   /**
-   * Sample Data Emitter 
+   * Sample Data Emitter FOR TASKS
    */
   setInterval(function() {
-    console.log("Emitting new data...");
+    console.log("Emitting new Task...");
 
     var task = {
       tasks: [
         {
-          pid: "212",
-          name: 'process',
+          pid: getRandomNumber(),
+          name: getRandomString(),
           res: 32,
           mem: 65,
           time: 23,
@@ -76,8 +76,41 @@ var initDataFlowMock = function(socket) {
     // socket.emit('cpus', task);
     // socket.on('shutdown', task);
   }, 3000);
+
+  /**
+   * Sample Data Emitter FOR CPUs
+   */
+  setInterval(function() {
+    console.log("Emitting CPUs data...");
+
+    var cpus = {
+      cpus: [
+        {
+          id: 1,
+          percentUsage: getRandomNumber(100)
+        },
+        {
+          id: 2,
+          percentUsage: getRandomNumber(100)
+        }
+      ]
+    };
+    socket.emit('cpus', cpus);
+  }, 2200);
 }
 
+function getRandomNumber(maxNumber = 100) {
+  return Math.floor(Math.random()*maxNumber);
+}
+
+function getRandomString() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for( var i=0; i < 5; i++ ) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return text;
+}
 
 /**
  * Normalize a port into a number, string, or false.

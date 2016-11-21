@@ -2,37 +2,12 @@
     <div class="row header">
       <div class="col-md-6">
         
-        <div class="row">
-          <div class="col-md-2">1</div>
+        <div class="row" *ngFor="let cpu of cpus">
+          <div class="col-md-2">{{cpu.id}}</div>
           <div class="col-md-10">
             <span class="white">[</span>
-            <span class="green">|</span>
-            <span class="green">|</span>
-            <span class="green">|</span>
-            <span class="green">|</span>
-            <span class="green">|</span>
-            <span class="red">|</span>
-            <span class="red">|</span>
-            <span class="green">|</span>
-            <span class="white">34%</span>
-            <span class="white">]</span>
-          </div>
-        </div>
-
-
-        <div class="row">
-          <div class="col-md-2">2</div>
-          <div class="col-md-10">
-            <span class="white">[</span>
-            <span class="green">|</span>
-            <span class="green">|</span>
-            <span class="green">|</span>
-            <span class="green">|</span>
-            <span class="green">|</span>
-            <span class="red">|</span>
-            <span class="red">|</span>
-            <span class="green">|</span>
-            <span class="white">30%</span>
+            <span [innerHTML]="printNumberOfPipes(cpu.percentUsage)"></span>
+            <span class="white">{{cpu.percentUsage}}%</span>
             <span class="white">]</span>
           </div>
         </div>
@@ -88,7 +63,7 @@
         
         <div class="row">
           <div class="col-md-6">Tasks: <span class="white">34 33</span></div>
-          <div class="col-md-6">thr: <span class="white">1</span> running</div>
+          <div class="col-md-6">thr: <span class="white">2</span> running</div>
         </div>
 
         <div class="row">
@@ -98,7 +73,7 @@
         <div class="row">
           <div class="col-md-12">Uptime: <span class="white">20 days, 11:57:29</span></div>
           <div class="col-md-12">
-            <svg id="visualisation" width="800" height="120"></svg>
+            <svg id="visualisation" width="600" height="120"></svg>
           </div>
         </div>
 

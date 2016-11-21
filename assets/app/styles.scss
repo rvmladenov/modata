@@ -72,3 +72,12 @@ footer {
 #searchValue, #searchValueLabel {
     font-size: 1.5em;
 }
+
+.axis path {
+  fill: none;
+  stroke: #000;
+}
+
+.axis + .axis g text {
+  display: none;
+}

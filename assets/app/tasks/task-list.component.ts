@@ -28,7 +28,7 @@ export class TaskListComponent implements OnInit {
         this.socketService.tasks
             .subscribe(
                 (data) => {
-                    this.tasks = this.tasks.concat(data.tasks);
+                    this.tasks = data.tasks.concat(this.tasks);
                 }
             );
     }

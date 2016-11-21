@@ -13,8 +13,13 @@ import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
 import * as import8 from './cpu.service';
-import * as import9 from '@angular/core/src/metadata/view';
-import * as import10 from '@angular/core/src/linker/component_factory';
+import * as import9 from '../socket/socket.service';
+import * as import10 from '@angular/core/src/metadata/view';
+import * as import11 from '@angular/core/src/linker/component_factory';
+import * as import12 from '@angular/common/src/directives/ng_for';
+import * as import13 from '@angular/core/src/linker/template_ref';
+import * as import14 from '@angular/core/src/change_detection/differs/iterable_differs';
+import * as import15 from '@angular/core/src/security';
 var renderType_CpusComponent_Host:import0.RenderComponentType = (null as any);
 class _View_CpusComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -27,7 +32,7 @@ class _View_CpusComponent_Host0 extends import1.AppView<any> {
     this._el_0 = this.selectOrCreateHostElement('app-cpu',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_CpusComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._CpusComponent_0_4 = new import3.CpusComponent(this.parentInjector.get(import8.CpuService));
+    this._CpusComponent_0_4 = new import3.CpusComponent(this.parentInjector.get(import8.CpuService),this.parentInjector.get(import9.SocketService));
     this._appEl_0.initComponent(this._CpusComponent_0_4,[],compView_0);
     compView_0.create(this._CpusComponent_0_4,this.projectableNodes,(null as any));
     this.init([].concat([this._el_0]),[this._el_0],[],[]);
@@ -44,10 +49,10 @@ class _View_CpusComponent_Host0 extends import1.AppView<any> {
   }
 }
 function viewFactory_CpusComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  if ((renderType_CpusComponent_Host === (null as any))) { (renderType_CpusComponent_Host = viewUtils.createRenderComponentType('',0,import9.ViewEncapsulation.None,[],{})); }
+  if ((renderType_CpusComponent_Host === (null as any))) { (renderType_CpusComponent_Host = viewUtils.createRenderComponentType('',0,import10.ViewEncapsulation.None,[],{})); }
   return new _View_CpusComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const CpusComponentNgFactory:import10.ComponentFactory<import3.CpusComponent> = new import10.ComponentFactory<import3.CpusComponent>('app-cpu',viewFactory_CpusComponent_Host0,import3.CpusComponent);
+export const CpusComponentNgFactory:import11.ComponentFactory<import3.CpusComponent> = new import11.ComponentFactory<import3.CpusComponent>('app-cpu',viewFactory_CpusComponent_Host0,import3.CpusComponent);
 const styles_CpusComponent:any[] = ['./cpus.scss'];
 var renderType_CpusComponent:import0.RenderComponentType = (null as any);
 class _View_CpusComponent0 extends import1.AppView<import3.CpusComponent> {
@@ -57,250 +62,172 @@ class _View_CpusComponent0 extends import1.AppView<import3.CpusComponent> {
   _text_3:any;
   _el_4:any;
   _text_5:any;
-  _el_6:any;
+  _anchor_6:any;
+  /*private*/ _appEl_6:import2.AppElement;
+  _TemplateRef_6_5:any;
+  _NgFor_6_6:import12.NgFor;
   _text_7:any;
   _el_8:any;
   _text_9:any;
-  _text_10:any;
-  _el_11:any;
+  _el_10:any;
+  _text_11:any;
   _text_12:any;
   _el_13:any;
   _text_14:any;
-  _text_15:any;
-  _el_16:any;
+  _el_15:any;
+  _text_16:any;
   _text_17:any;
-  _text_18:any;
-  _el_19:any;
+  _el_18:any;
+  _text_19:any;
   _text_20:any;
-  _text_21:any;
-  _el_22:any;
+  _el_21:any;
+  _text_22:any;
   _text_23:any;
-  _text_24:any;
-  _el_25:any;
+  _el_24:any;
+  _text_25:any;
   _text_26:any;
-  _text_27:any;
-  _el_28:any;
+  _el_27:any;
+  _text_28:any;
   _text_29:any;
-  _text_30:any;
-  _el_31:any;
+  _el_30:any;
+  _text_31:any;
   _text_32:any;
-  _text_33:any;
-  _el_34:any;
+  _el_33:any;
+  _text_34:any;
   _text_35:any;
-  _text_36:any;
-  _el_37:any;
+  _el_36:any;
+  _text_37:any;
   _text_38:any;
-  _text_39:any;
-  _el_40:any;
+  _el_39:any;
+  _text_40:any;
   _text_41:any;
-  _text_42:any;
-  _el_43:any;
+  _el_42:any;
+  _text_43:any;
   _text_44:any;
-  _text_45:any;
+  _el_45:any;
   _text_46:any;
   _text_47:any;
   _el_48:any;
   _text_49:any;
-  _el_50:any;
-  _text_51:any;
+  _text_50:any;
+  _el_51:any;
   _text_52:any;
-  _el_53:any;
-  _text_54:any;
-  _el_55:any;
+  _text_53:any;
+  _el_54:any;
+  _text_55:any;
   _text_56:any;
-  _text_57:any;
-  _el_58:any;
+  _el_57:any;
+  _text_58:any;
   _text_59:any;
-  _text_60:any;
-  _el_61:any;
+  _el_60:any;
+  _text_61:any;
   _text_62:any;
-  _text_63:any;
-  _el_64:any;
+  _el_63:any;
+  _text_64:any;
   _text_65:any;
-  _text_66:any;
-  _el_67:any;
+  _el_66:any;
+  _text_67:any;
   _text_68:any;
-  _text_69:any;
-  _el_70:any;
+  _el_69:any;
+  _text_70:any;
   _text_71:any;
   _text_72:any;
-  _el_73:any;
-  _text_74:any;
+  _text_73:any;
+  _el_74:any;
   _text_75:any;
   _el_76:any;
   _text_77:any;
   _text_78:any;
   _el_79:any;
   _text_80:any;
-  _text_81:any;
-  _el_82:any;
+  _el_81:any;
+  _text_82:any;
   _text_83:any;
-  _text_84:any;
-  _el_85:any;
+  _el_84:any;
+  _text_85:any;
   _text_86:any;
-  _text_87:any;
+  _el_87:any;
   _text_88:any;
   _text_89:any;
   _el_90:any;
   _text_91:any;
-  _el_92:any;
-  _text_93:any;
+  _text_92:any;
+  _el_93:any;
   _text_94:any;
-  _el_95:any;
-  _text_96:any;
-  _el_97:any;
+  _text_95:any;
+  _el_96:any;
+  _text_97:any;
   _text_98:any;
-  _text_99:any;
-  _el_100:any;
+  _el_99:any;
+  _text_100:any;
   _text_101:any;
-  _text_102:any;
-  _el_103:any;
+  _el_102:any;
+  _text_103:any;
   _text_104:any;
-  _text_105:any;
-  _el_106:any;
+  _el_105:any;
+  _text_106:any;
   _text_107:any;
-  _text_108:any;
-  _el_109:any;
+  _el_108:any;
+  _text_109:any;
   _text_110:any;
-  _text_111:any;
-  _el_112:any;
+  _el_111:any;
+  _text_112:any;
   _text_113:any;
-  _text_114:any;
-  _el_115:any;
+  _el_114:any;
+  _text_115:any;
   _text_116:any;
-  _text_117:any;
-  _el_118:any;
+  _el_117:any;
+  _text_118:any;
   _text_119:any;
-  _text_120:any;
-  _el_121:any;
+  _el_120:any;
+  _text_121:any;
   _text_122:any;
-  _text_123:any;
-  _el_124:any;
+  _el_123:any;
+  _text_124:any;
   _text_125:any;
   _text_126:any;
-  _el_127:any;
+  _text_127:any;
   _text_128:any;
-  _text_129:any;
-  _el_130:any;
-  _text_131:any;
+  _el_129:any;
+  _text_130:any;
+  _el_131:any;
   _text_132:any;
   _el_133:any;
   _text_134:any;
-  _text_135:any;
-  _el_136:any;
+  _el_135:any;
+  _text_136:any;
   _text_137:any;
-  _text_138:any;
-  _el_139:any;
-  _text_140:any;
+  _el_138:any;
+  _text_139:any;
+  _el_140:any;
   _text_141:any;
-  _el_142:any;
+  _text_142:any;
   _text_143:any;
   _text_144:any;
   _el_145:any;
   _text_146:any;
-  _text_147:any;
-  _el_148:any;
-  _text_149:any;
+  _el_147:any;
+  _text_148:any;
+  _el_149:any;
   _text_150:any;
-  _el_151:any;
+  _text_151:any;
   _text_152:any;
-  _text_153:any;
+  _el_153:any;
   _text_154:any;
-  _text_155:any;
-  _el_156:any;
-  _text_157:any;
-  _el_158:any;
+  _el_155:any;
+  _text_156:any;
+  _el_157:any;
+  _text_158:any;
   _text_159:any;
-  _text_160:any;
-  _el_161:any;
-  _text_162:any;
-  _el_163:any;
+  _el_160:any;
+  _text_161:any;
+  _el_162:any;
+  _text_163:any;
   _text_164:any;
   _text_165:any;
-  _el_166:any;
+  _text_166:any;
   _text_167:any;
-  _text_168:any;
-  _el_169:any;
-  _text_170:any;
-  _text_171:any;
-  _el_172:any;
-  _text_173:any;
-  _text_174:any;
-  _el_175:any;
-  _text_176:any;
-  _text_177:any;
-  _el_178:any;
-  _text_179:any;
-  _text_180:any;
-  _el_181:any;
-  _text_182:any;
-  _text_183:any;
-  _el_184:any;
-  _text_185:any;
-  _text_186:any;
-  _el_187:any;
-  _text_188:any;
-  _text_189:any;
-  _el_190:any;
-  _text_191:any;
-  _text_192:any;
-  _el_193:any;
-  _text_194:any;
-  _text_195:any;
-  _el_196:any;
-  _text_197:any;
-  _text_198:any;
-  _el_199:any;
-  _text_200:any;
-  _text_201:any;
-  _el_202:any;
-  _text_203:any;
-  _text_204:any;
-  _el_205:any;
-  _text_206:any;
-  _text_207:any;
-  _text_208:any;
-  _text_209:any;
-  _text_210:any;
-  _el_211:any;
-  _text_212:any;
-  _el_213:any;
-  _text_214:any;
-  _el_215:any;
-  _text_216:any;
-  _el_217:any;
-  _text_218:any;
-  _text_219:any;
-  _el_220:any;
-  _text_221:any;
-  _el_222:any;
-  _text_223:any;
-  _text_224:any;
-  _text_225:any;
-  _text_226:any;
-  _el_227:any;
-  _text_228:any;
-  _el_229:any;
-  _text_230:any;
-  _el_231:any;
-  _text_232:any;
-  _text_233:any;
-  _text_234:any;
-  _el_235:any;
-  _text_236:any;
-  _el_237:any;
-  _text_238:any;
-  _el_239:any;
-  _text_240:any;
-  _text_241:any;
-  _el_242:any;
-  _text_243:any;
-  _el_244:any;
-  _text_245:any;
-  _text_246:any;
-  _text_247:any;
-  _text_248:any;
-  _text_249:any;
+  /*private*/ _expr_0:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_CpusComponent0,renderType_CpusComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
@@ -315,327 +242,221 @@ class _View_CpusComponent0 extends import1.AppView<import3.CpusComponent> {
     this._el_4 = this.renderer.createElement(this._el_2,'div',(null as any));
     this.renderer.setElementAttribute(this._el_4,'class','col-md-6');
     this._text_5 = this.renderer.createText(this._el_4,'\n        \n        ',(null as any));
-    this._el_6 = this.renderer.createElement(this._el_4,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_6,'class','row');
-    this._text_7 = this.renderer.createText(this._el_6,'\n          ',(null as any));
-    this._el_8 = this.renderer.createElement(this._el_6,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_8,'class','col-md-2');
-    this._text_9 = this.renderer.createText(this._el_8,'1',(null as any));
-    this._text_10 = this.renderer.createText(this._el_6,'\n          ',(null as any));
-    this._el_11 = this.renderer.createElement(this._el_6,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_11,'class','col-md-10');
-    this._text_12 = this.renderer.createText(this._el_11,'\n            ',(null as any));
-    this._el_13 = this.renderer.createElement(this._el_11,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_13,'class','white');
-    this._text_14 = this.renderer.createText(this._el_13,'[',(null as any));
-    this._text_15 = this.renderer.createText(this._el_11,'\n            ',(null as any));
-    this._el_16 = this.renderer.createElement(this._el_11,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_16,'class','green');
-    this._text_17 = this.renderer.createText(this._el_16,'|',(null as any));
-    this._text_18 = this.renderer.createText(this._el_11,'\n            ',(null as any));
-    this._el_19 = this.renderer.createElement(this._el_11,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_19,'class','green');
-    this._text_20 = this.renderer.createText(this._el_19,'|',(null as any));
-    this._text_21 = this.renderer.createText(this._el_11,'\n            ',(null as any));
-    this._el_22 = this.renderer.createElement(this._el_11,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_22,'class','green');
-    this._text_23 = this.renderer.createText(this._el_22,'|',(null as any));
-    this._text_24 = this.renderer.createText(this._el_11,'\n            ',(null as any));
-    this._el_25 = this.renderer.createElement(this._el_11,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_25,'class','green');
-    this._text_26 = this.renderer.createText(this._el_25,'|',(null as any));
-    this._text_27 = this.renderer.createText(this._el_11,'\n            ',(null as any));
-    this._el_28 = this.renderer.createElement(this._el_11,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_28,'class','green');
-    this._text_29 = this.renderer.createText(this._el_28,'|',(null as any));
-    this._text_30 = this.renderer.createText(this._el_11,'\n            ',(null as any));
-    this._el_31 = this.renderer.createElement(this._el_11,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_31,'class','red');
-    this._text_32 = this.renderer.createText(this._el_31,'|',(null as any));
-    this._text_33 = this.renderer.createText(this._el_11,'\n            ',(null as any));
-    this._el_34 = this.renderer.createElement(this._el_11,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_34,'class','red');
-    this._text_35 = this.renderer.createText(this._el_34,'|',(null as any));
-    this._text_36 = this.renderer.createText(this._el_11,'\n            ',(null as any));
-    this._el_37 = this.renderer.createElement(this._el_11,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_37,'class','green');
-    this._text_38 = this.renderer.createText(this._el_37,'|',(null as any));
-    this._text_39 = this.renderer.createText(this._el_11,'\n            ',(null as any));
-    this._el_40 = this.renderer.createElement(this._el_11,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_40,'class','white');
-    this._text_41 = this.renderer.createText(this._el_40,'34%',(null as any));
-    this._text_42 = this.renderer.createText(this._el_11,'\n            ',(null as any));
-    this._el_43 = this.renderer.createElement(this._el_11,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_43,'class','white');
-    this._text_44 = this.renderer.createText(this._el_43,']',(null as any));
-    this._text_45 = this.renderer.createText(this._el_11,'\n          ',(null as any));
-    this._text_46 = this.renderer.createText(this._el_6,'\n        ',(null as any));
-    this._text_47 = this.renderer.createText(this._el_4,'\n\n\n        ',(null as any));
-    this._el_48 = this.renderer.createElement(this._el_4,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_48,'class','row');
-    this._text_49 = this.renderer.createText(this._el_48,'\n          ',(null as any));
-    this._el_50 = this.renderer.createElement(this._el_48,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_50,'class','col-md-2');
-    this._text_51 = this.renderer.createText(this._el_50,'2',(null as any));
-    this._text_52 = this.renderer.createText(this._el_48,'\n          ',(null as any));
-    this._el_53 = this.renderer.createElement(this._el_48,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_53,'class','col-md-10');
-    this._text_54 = this.renderer.createText(this._el_53,'\n            ',(null as any));
-    this._el_55 = this.renderer.createElement(this._el_53,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_55,'class','white');
-    this._text_56 = this.renderer.createText(this._el_55,'[',(null as any));
-    this._text_57 = this.renderer.createText(this._el_53,'\n            ',(null as any));
-    this._el_58 = this.renderer.createElement(this._el_53,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_58,'class','green');
-    this._text_59 = this.renderer.createText(this._el_58,'|',(null as any));
-    this._text_60 = this.renderer.createText(this._el_53,'\n            ',(null as any));
-    this._el_61 = this.renderer.createElement(this._el_53,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_61,'class','green');
-    this._text_62 = this.renderer.createText(this._el_61,'|',(null as any));
-    this._text_63 = this.renderer.createText(this._el_53,'\n            ',(null as any));
-    this._el_64 = this.renderer.createElement(this._el_53,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_64,'class','green');
-    this._text_65 = this.renderer.createText(this._el_64,'|',(null as any));
-    this._text_66 = this.renderer.createText(this._el_53,'\n            ',(null as any));
-    this._el_67 = this.renderer.createElement(this._el_53,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_67,'class','green');
-    this._text_68 = this.renderer.createText(this._el_67,'|',(null as any));
-    this._text_69 = this.renderer.createText(this._el_53,'\n            ',(null as any));
-    this._el_70 = this.renderer.createElement(this._el_53,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_70,'class','green');
-    this._text_71 = this.renderer.createText(this._el_70,'|',(null as any));
-    this._text_72 = this.renderer.createText(this._el_53,'\n            ',(null as any));
-    this._el_73 = this.renderer.createElement(this._el_53,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_73,'class','red');
-    this._text_74 = this.renderer.createText(this._el_73,'|',(null as any));
-    this._text_75 = this.renderer.createText(this._el_53,'\n            ',(null as any));
-    this._el_76 = this.renderer.createElement(this._el_53,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_76,'class','red');
-    this._text_77 = this.renderer.createText(this._el_76,'|',(null as any));
-    this._text_78 = this.renderer.createText(this._el_53,'\n            ',(null as any));
-    this._el_79 = this.renderer.createElement(this._el_53,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_79,'class','green');
-    this._text_80 = this.renderer.createText(this._el_79,'|',(null as any));
-    this._text_81 = this.renderer.createText(this._el_53,'\n            ',(null as any));
-    this._el_82 = this.renderer.createElement(this._el_53,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_82,'class','white');
-    this._text_83 = this.renderer.createText(this._el_82,'30%',(null as any));
-    this._text_84 = this.renderer.createText(this._el_53,'\n            ',(null as any));
-    this._el_85 = this.renderer.createElement(this._el_53,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_85,'class','white');
-    this._text_86 = this.renderer.createText(this._el_85,']',(null as any));
-    this._text_87 = this.renderer.createText(this._el_53,'\n          ',(null as any));
-    this._text_88 = this.renderer.createText(this._el_48,'\n        ',(null as any));
-    this._text_89 = this.renderer.createText(this._el_4,'\n\n        ',(null as any));
-    this._el_90 = this.renderer.createElement(this._el_4,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_90,'class','row');
-    this._text_91 = this.renderer.createText(this._el_90,'\n          ',(null as any));
-    this._el_92 = this.renderer.createElement(this._el_90,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_92,'class','col-md-2');
-    this._text_93 = this.renderer.createText(this._el_92,'Mem',(null as any));
-    this._text_94 = this.renderer.createText(this._el_90,'\n          ',(null as any));
-    this._el_95 = this.renderer.createElement(this._el_90,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_95,'class','col-md-10');
-    this._text_96 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_97 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_97,'class','white');
-    this._text_98 = this.renderer.createText(this._el_97,'[',(null as any));
-    this._text_99 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_100 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_100,'class','green');
-    this._text_101 = this.renderer.createText(this._el_100,'|',(null as any));
-    this._text_102 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_103 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_103,'class','green');
-    this._text_104 = this.renderer.createText(this._el_103,'|',(null as any));
-    this._text_105 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_106 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_106,'class','green');
-    this._text_107 = this.renderer.createText(this._el_106,'|',(null as any));
-    this._text_108 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_109 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_109,'class','green');
-    this._text_110 = this.renderer.createText(this._el_109,'|',(null as any));
-    this._text_111 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_112 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_112,'class','green');
-    this._text_113 = this.renderer.createText(this._el_112,'|',(null as any));
-    this._text_114 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_115 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_115,'class','red');
-    this._text_116 = this.renderer.createText(this._el_115,'|',(null as any));
-    this._text_117 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_118 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_118,'class','red');
-    this._text_119 = this.renderer.createText(this._el_118,'|',(null as any));
-    this._text_120 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_121 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_121,'class','green');
-    this._text_122 = this.renderer.createText(this._el_121,'|',(null as any));
-    this._text_123 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_124 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_124,'class','green');
-    this._text_125 = this.renderer.createText(this._el_124,'|',(null as any));
-    this._text_126 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_127 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_127,'class','green');
-    this._text_128 = this.renderer.createText(this._el_127,'|',(null as any));
-    this._text_129 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_130 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_130,'class','green');
-    this._text_131 = this.renderer.createText(this._el_130,'|',(null as any));
-    this._text_132 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_133 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_133,'class','green');
-    this._text_134 = this.renderer.createText(this._el_133,'|',(null as any));
-    this._text_135 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_136 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_136,'class','green');
-    this._text_137 = this.renderer.createText(this._el_136,'|',(null as any));
-    this._text_138 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_139 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_139,'class','green');
-    this._text_140 = this.renderer.createText(this._el_139,'|',(null as any));
-    this._text_141 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_142 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_142,'class','green');
-    this._text_143 = this.renderer.createText(this._el_142,'|',(null as any));
-    this._text_144 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_145 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_145,'class','green');
-    this._text_146 = this.renderer.createText(this._el_145,'|',(null as any));
-    this._text_147 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_148 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_148,'class','gray');
-    this._text_149 = this.renderer.createText(this._el_148,'993MB',(null as any));
-    this._text_150 = this.renderer.createText(this._el_95,'\n            ',(null as any));
-    this._el_151 = this.renderer.createElement(this._el_95,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_151,'class','white');
-    this._text_152 = this.renderer.createText(this._el_151,']',(null as any));
-    this._text_153 = this.renderer.createText(this._el_95,'\n          ',(null as any));
-    this._text_154 = this.renderer.createText(this._el_90,'\n        ',(null as any));
-    this._text_155 = this.renderer.createText(this._el_4,'\n\n        ',(null as any));
-    this._el_156 = this.renderer.createElement(this._el_4,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_156,'class','row');
-    this._text_157 = this.renderer.createText(this._el_156,'\n          ',(null as any));
-    this._el_158 = this.renderer.createElement(this._el_156,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_158,'class','col-md-2');
-    this._text_159 = this.renderer.createText(this._el_158,'Swp',(null as any));
-    this._text_160 = this.renderer.createText(this._el_156,'\n          ',(null as any));
-    this._el_161 = this.renderer.createElement(this._el_156,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_161,'class','col-md-10');
-    this._text_162 = this.renderer.createText(this._el_161,'\n            ',(null as any));
-    this._el_163 = this.renderer.createElement(this._el_161,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_163,'class','white');
-    this._text_164 = this.renderer.createText(this._el_163,'[',(null as any));
-    this._text_165 = this.renderer.createText(this._el_161,'\n            ',(null as any));
-    this._el_166 = this.renderer.createElement(this._el_161,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_166,'class','green');
-    this._text_167 = this.renderer.createText(this._el_166,'|',(null as any));
-    this._text_168 = this.renderer.createText(this._el_161,'\n            ',(null as any));
-    this._el_169 = this.renderer.createElement(this._el_161,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_169,'class','green');
-    this._text_170 = this.renderer.createText(this._el_169,'|',(null as any));
-    this._text_171 = this.renderer.createText(this._el_161,'\n            ',(null as any));
-    this._el_172 = this.renderer.createElement(this._el_161,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_172,'class','green');
-    this._text_173 = this.renderer.createText(this._el_172,'|',(null as any));
-    this._text_174 = this.renderer.createText(this._el_161,'\n            ',(null as any));
-    this._el_175 = this.renderer.createElement(this._el_161,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_175,'class','green');
-    this._text_176 = this.renderer.createText(this._el_175,'|',(null as any));
-    this._text_177 = this.renderer.createText(this._el_161,'\n            ',(null as any));
-    this._el_178 = this.renderer.createElement(this._el_161,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_178,'class','green');
-    this._text_179 = this.renderer.createText(this._el_178,'|',(null as any));
-    this._text_180 = this.renderer.createText(this._el_161,'\n            ',(null as any));
-    this._el_181 = this.renderer.createElement(this._el_161,'span',(null as any));
-    this._text_182 = this.renderer.createText(this._el_181,' ',(null as any));
-    this._text_183 = this.renderer.createText(this._el_161,'\n            ',(null as any));
-    this._el_184 = this.renderer.createElement(this._el_161,'span',(null as any));
-    this._text_185 = this.renderer.createText(this._el_184,' ',(null as any));
-    this._text_186 = this.renderer.createText(this._el_161,'\n            ',(null as any));
-    this._el_187 = this.renderer.createElement(this._el_161,'span',(null as any));
-    this._text_188 = this.renderer.createText(this._el_187,' ',(null as any));
-    this._text_189 = this.renderer.createText(this._el_161,'\n            ',(null as any));
-    this._el_190 = this.renderer.createElement(this._el_161,'span',(null as any));
-    this._text_191 = this.renderer.createText(this._el_190,' ',(null as any));
-    this._text_192 = this.renderer.createText(this._el_161,'\n            ',(null as any));
-    this._el_193 = this.renderer.createElement(this._el_161,'span',(null as any));
-    this._text_194 = this.renderer.createText(this._el_193,' ',(null as any));
-    this._text_195 = this.renderer.createText(this._el_161,'\n            ',(null as any));
-    this._el_196 = this.renderer.createElement(this._el_161,'span',(null as any));
-    this._text_197 = this.renderer.createText(this._el_196,' ',(null as any));
-    this._text_198 = this.renderer.createText(this._el_161,'\n            ',(null as any));
-    this._el_199 = this.renderer.createElement(this._el_161,'span',(null as any));
-    this._text_200 = this.renderer.createText(this._el_199,' ',(null as any));
-    this._text_201 = this.renderer.createText(this._el_161,'\n            ',(null as any));
-    this._el_202 = this.renderer.createElement(this._el_161,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_202,'class','gray');
-    this._text_203 = this.renderer.createText(this._el_202,'63/953MB',(null as any));
-    this._text_204 = this.renderer.createText(this._el_161,'\n            ',(null as any));
-    this._el_205 = this.renderer.createElement(this._el_161,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_205,'class','white');
-    this._text_206 = this.renderer.createText(this._el_205,']',(null as any));
-    this._text_207 = this.renderer.createText(this._el_161,'\n          ',(null as any));
-    this._text_208 = this.renderer.createText(this._el_156,'\n        ',(null as any));
-    this._text_209 = this.renderer.createText(this._el_4,'\n\n      ',(null as any));
-    this._text_210 = this.renderer.createText(this._el_2,'\n      ',(null as any));
-    this._el_211 = this.renderer.createElement(this._el_2,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_211,'class','col-md-6');
-    this._text_212 = this.renderer.createText(this._el_211,'\n        \n        ',(null as any));
-    this._el_213 = this.renderer.createElement(this._el_211,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_213,'class','row');
-    this._text_214 = this.renderer.createText(this._el_213,'\n          ',(null as any));
-    this._el_215 = this.renderer.createElement(this._el_213,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_215,'class','col-md-6');
-    this._text_216 = this.renderer.createText(this._el_215,'Tasks: ',(null as any));
-    this._el_217 = this.renderer.createElement(this._el_215,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_217,'class','white');
-    this._text_218 = this.renderer.createText(this._el_217,'34 33',(null as any));
-    this._text_219 = this.renderer.createText(this._el_213,'\n          ',(null as any));
-    this._el_220 = this.renderer.createElement(this._el_213,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_220,'class','col-md-6');
-    this._text_221 = this.renderer.createText(this._el_220,'thr: ',(null as any));
-    this._el_222 = this.renderer.createElement(this._el_220,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_222,'class','white');
-    this._text_223 = this.renderer.createText(this._el_222,'1',(null as any));
-    this._text_224 = this.renderer.createText(this._el_220,' running',(null as any));
-    this._text_225 = this.renderer.createText(this._el_213,'\n        ',(null as any));
-    this._text_226 = this.renderer.createText(this._el_211,'\n\n        ',(null as any));
-    this._el_227 = this.renderer.createElement(this._el_211,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_227,'class','row');
-    this._text_228 = this.renderer.createText(this._el_227,'\n          ',(null as any));
-    this._el_229 = this.renderer.createElement(this._el_227,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_229,'class','col-md-12');
-    this._text_230 = this.renderer.createText(this._el_229,'Load average: ',(null as any));
-    this._el_231 = this.renderer.createElement(this._el_229,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_231,'class','white');
-    this._text_232 = this.renderer.createText(this._el_231,'0.05, 0.17 0.21',(null as any));
-    this._text_233 = this.renderer.createText(this._el_227,'\n        ',(null as any));
-    this._text_234 = this.renderer.createText(this._el_211,'\n\n        ',(null as any));
-    this._el_235 = this.renderer.createElement(this._el_211,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_235,'class','row');
-    this._text_236 = this.renderer.createText(this._el_235,'\n          ',(null as any));
-    this._el_237 = this.renderer.createElement(this._el_235,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_237,'class','col-md-12');
-    this._text_238 = this.renderer.createText(this._el_237,'Uptime: ',(null as any));
-    this._el_239 = this.renderer.createElement(this._el_237,'span',(null as any));
-    this.renderer.setElementAttribute(this._el_239,'class','white');
-    this._text_240 = this.renderer.createText(this._el_239,'20 days, 11:57:29',(null as any));
-    this._text_241 = this.renderer.createText(this._el_235,'\n          ',(null as any));
-    this._el_242 = this.renderer.createElement(this._el_235,'div',(null as any));
-    this.renderer.setElementAttribute(this._el_242,'class','col-md-12');
-    this._text_243 = this.renderer.createText(this._el_242,'\n            ',(null as any));
-    this._el_244 = this.renderer.createElement(this._el_242,':svg:svg',(null as any));
-    this.renderer.setElementAttribute(this._el_244,'height','120');
-    this.renderer.setElementAttribute(this._el_244,'id','visualisation');
-    this.renderer.setElementAttribute(this._el_244,'width','800');
-    this._text_245 = this.renderer.createText(this._el_242,'\n          ',(null as any));
-    this._text_246 = this.renderer.createText(this._el_235,'\n        ',(null as any));
-    this._text_247 = this.renderer.createText(this._el_211,'\n\n      ',(null as any));
-    this._text_248 = this.renderer.createText(this._el_2,'\n    ',(null as any));
-    this._text_249 = this.renderer.createText(this._el_0,'\n  ',(null as any));
+    this._anchor_6 = this.renderer.createTemplateAnchor(this._el_4,(null as any));
+    this._appEl_6 = new import2.AppElement(6,4,this,this._anchor_6);
+    this._TemplateRef_6_5 = new import13.TemplateRef_(this._appEl_6,viewFactory_CpusComponent1);
+    this._NgFor_6_6 = new import12.NgFor(this._appEl_6.vcRef,this._TemplateRef_6_5,this.parentInjector.get(import14.IterableDiffers),this.ref);
+    this._text_7 = this.renderer.createText(this._el_4,'\n\n        ',(null as any));
+    this._el_8 = this.renderer.createElement(this._el_4,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_8,'class','row');
+    this._text_9 = this.renderer.createText(this._el_8,'\n          ',(null as any));
+    this._el_10 = this.renderer.createElement(this._el_8,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_10,'class','col-md-2');
+    this._text_11 = this.renderer.createText(this._el_10,'Mem',(null as any));
+    this._text_12 = this.renderer.createText(this._el_8,'\n          ',(null as any));
+    this._el_13 = this.renderer.createElement(this._el_8,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_13,'class','col-md-10');
+    this._text_14 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_15 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_15,'class','white');
+    this._text_16 = this.renderer.createText(this._el_15,'[',(null as any));
+    this._text_17 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_18 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_18,'class','green');
+    this._text_19 = this.renderer.createText(this._el_18,'|',(null as any));
+    this._text_20 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_21 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_21,'class','green');
+    this._text_22 = this.renderer.createText(this._el_21,'|',(null as any));
+    this._text_23 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_24 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_24,'class','green');
+    this._text_25 = this.renderer.createText(this._el_24,'|',(null as any));
+    this._text_26 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_27 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_27,'class','green');
+    this._text_28 = this.renderer.createText(this._el_27,'|',(null as any));
+    this._text_29 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_30 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_30,'class','green');
+    this._text_31 = this.renderer.createText(this._el_30,'|',(null as any));
+    this._text_32 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_33 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_33,'class','red');
+    this._text_34 = this.renderer.createText(this._el_33,'|',(null as any));
+    this._text_35 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_36 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_36,'class','red');
+    this._text_37 = this.renderer.createText(this._el_36,'|',(null as any));
+    this._text_38 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_39 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_39,'class','green');
+    this._text_40 = this.renderer.createText(this._el_39,'|',(null as any));
+    this._text_41 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_42 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_42,'class','green');
+    this._text_43 = this.renderer.createText(this._el_42,'|',(null as any));
+    this._text_44 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_45 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_45,'class','green');
+    this._text_46 = this.renderer.createText(this._el_45,'|',(null as any));
+    this._text_47 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_48 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_48,'class','green');
+    this._text_49 = this.renderer.createText(this._el_48,'|',(null as any));
+    this._text_50 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_51 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_51,'class','green');
+    this._text_52 = this.renderer.createText(this._el_51,'|',(null as any));
+    this._text_53 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_54 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_54,'class','green');
+    this._text_55 = this.renderer.createText(this._el_54,'|',(null as any));
+    this._text_56 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_57 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_57,'class','green');
+    this._text_58 = this.renderer.createText(this._el_57,'|',(null as any));
+    this._text_59 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_60 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_60,'class','green');
+    this._text_61 = this.renderer.createText(this._el_60,'|',(null as any));
+    this._text_62 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_63 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_63,'class','green');
+    this._text_64 = this.renderer.createText(this._el_63,'|',(null as any));
+    this._text_65 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_66 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_66,'class','gray');
+    this._text_67 = this.renderer.createText(this._el_66,'993MB',(null as any));
+    this._text_68 = this.renderer.createText(this._el_13,'\n            ',(null as any));
+    this._el_69 = this.renderer.createElement(this._el_13,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_69,'class','white');
+    this._text_70 = this.renderer.createText(this._el_69,']',(null as any));
+    this._text_71 = this.renderer.createText(this._el_13,'\n          ',(null as any));
+    this._text_72 = this.renderer.createText(this._el_8,'\n        ',(null as any));
+    this._text_73 = this.renderer.createText(this._el_4,'\n\n        ',(null as any));
+    this._el_74 = this.renderer.createElement(this._el_4,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_74,'class','row');
+    this._text_75 = this.renderer.createText(this._el_74,'\n          ',(null as any));
+    this._el_76 = this.renderer.createElement(this._el_74,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_76,'class','col-md-2');
+    this._text_77 = this.renderer.createText(this._el_76,'Swp',(null as any));
+    this._text_78 = this.renderer.createText(this._el_74,'\n          ',(null as any));
+    this._el_79 = this.renderer.createElement(this._el_74,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_79,'class','col-md-10');
+    this._text_80 = this.renderer.createText(this._el_79,'\n            ',(null as any));
+    this._el_81 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_81,'class','white');
+    this._text_82 = this.renderer.createText(this._el_81,'[',(null as any));
+    this._text_83 = this.renderer.createText(this._el_79,'\n            ',(null as any));
+    this._el_84 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_84,'class','green');
+    this._text_85 = this.renderer.createText(this._el_84,'|',(null as any));
+    this._text_86 = this.renderer.createText(this._el_79,'\n            ',(null as any));
+    this._el_87 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_87,'class','green');
+    this._text_88 = this.renderer.createText(this._el_87,'|',(null as any));
+    this._text_89 = this.renderer.createText(this._el_79,'\n            ',(null as any));
+    this._el_90 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_90,'class','green');
+    this._text_91 = this.renderer.createText(this._el_90,'|',(null as any));
+    this._text_92 = this.renderer.createText(this._el_79,'\n            ',(null as any));
+    this._el_93 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_93,'class','green');
+    this._text_94 = this.renderer.createText(this._el_93,'|',(null as any));
+    this._text_95 = this.renderer.createText(this._el_79,'\n            ',(null as any));
+    this._el_96 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_96,'class','green');
+    this._text_97 = this.renderer.createText(this._el_96,'|',(null as any));
+    this._text_98 = this.renderer.createText(this._el_79,'\n            ',(null as any));
+    this._el_99 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this._text_100 = this.renderer.createText(this._el_99,' ',(null as any));
+    this._text_101 = this.renderer.createText(this._el_79,'\n            ',(null as any));
+    this._el_102 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this._text_103 = this.renderer.createText(this._el_102,' ',(null as any));
+    this._text_104 = this.renderer.createText(this._el_79,'\n            ',(null as any));
+    this._el_105 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this._text_106 = this.renderer.createText(this._el_105,' ',(null as any));
+    this._text_107 = this.renderer.createText(this._el_79,'\n            ',(null as any));
+    this._el_108 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this._text_109 = this.renderer.createText(this._el_108,' ',(null as any));
+    this._text_110 = this.renderer.createText(this._el_79,'\n            ',(null as any));
+    this._el_111 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this._text_112 = this.renderer.createText(this._el_111,' ',(null as any));
+    this._text_113 = this.renderer.createText(this._el_79,'\n            ',(null as any));
+    this._el_114 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this._text_115 = this.renderer.createText(this._el_114,' ',(null as any));
+    this._text_116 = this.renderer.createText(this._el_79,'\n            ',(null as any));
+    this._el_117 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this._text_118 = this.renderer.createText(this._el_117,' ',(null as any));
+    this._text_119 = this.renderer.createText(this._el_79,'\n            ',(null as any));
+    this._el_120 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_120,'class','gray');
+    this._text_121 = this.renderer.createText(this._el_120,'63/953MB',(null as any));
+    this._text_122 = this.renderer.createText(this._el_79,'\n            ',(null as any));
+    this._el_123 = this.renderer.createElement(this._el_79,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_123,'class','white');
+    this._text_124 = this.renderer.createText(this._el_123,']',(null as any));
+    this._text_125 = this.renderer.createText(this._el_79,'\n          ',(null as any));
+    this._text_126 = this.renderer.createText(this._el_74,'\n        ',(null as any));
+    this._text_127 = this.renderer.createText(this._el_4,'\n\n      ',(null as any));
+    this._text_128 = this.renderer.createText(this._el_2,'\n      ',(null as any));
+    this._el_129 = this.renderer.createElement(this._el_2,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_129,'class','col-md-6');
+    this._text_130 = this.renderer.createText(this._el_129,'\n        \n        ',(null as any));
+    this._el_131 = this.renderer.createElement(this._el_129,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_131,'class','row');
+    this._text_132 = this.renderer.createText(this._el_131,'\n          ',(null as any));
+    this._el_133 = this.renderer.createElement(this._el_131,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_133,'class','col-md-6');
+    this._text_134 = this.renderer.createText(this._el_133,'Tasks: ',(null as any));
+    this._el_135 = this.renderer.createElement(this._el_133,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_135,'class','white');
+    this._text_136 = this.renderer.createText(this._el_135,'34 33',(null as any));
+    this._text_137 = this.renderer.createText(this._el_131,'\n          ',(null as any));
+    this._el_138 = this.renderer.createElement(this._el_131,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_138,'class','col-md-6');
+    this._text_139 = this.renderer.createText(this._el_138,'thr: ',(null as any));
+    this._el_140 = this.renderer.createElement(this._el_138,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_140,'class','white');
+    this._text_141 = this.renderer.createText(this._el_140,'2',(null as any));
+    this._text_142 = this.renderer.createText(this._el_138,' running',(null as any));
+    this._text_143 = this.renderer.createText(this._el_131,'\n        ',(null as any));
+    this._text_144 = this.renderer.createText(this._el_129,'\n\n        ',(null as any));
+    this._el_145 = this.renderer.createElement(this._el_129,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_145,'class','row');
+    this._text_146 = this.renderer.createText(this._el_145,'\n          ',(null as any));
+    this._el_147 = this.renderer.createElement(this._el_145,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_147,'class','col-md-12');
+    this._text_148 = this.renderer.createText(this._el_147,'Load average: ',(null as any));
+    this._el_149 = this.renderer.createElement(this._el_147,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_149,'class','white');
+    this._text_150 = this.renderer.createText(this._el_149,'0.05, 0.17 0.21',(null as any));
+    this._text_151 = this.renderer.createText(this._el_145,'\n        ',(null as any));
+    this._text_152 = this.renderer.createText(this._el_129,'\n\n        ',(null as any));
+    this._el_153 = this.renderer.createElement(this._el_129,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_153,'class','row');
+    this._text_154 = this.renderer.createText(this._el_153,'\n          ',(null as any));
+    this._el_155 = this.renderer.createElement(this._el_153,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_155,'class','col-md-12');
+    this._text_156 = this.renderer.createText(this._el_155,'Uptime: ',(null as any));
+    this._el_157 = this.renderer.createElement(this._el_155,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_157,'class','white');
+    this._text_158 = this.renderer.createText(this._el_157,'20 days, 11:57:29',(null as any));
+    this._text_159 = this.renderer.createText(this._el_153,'\n          ',(null as any));
+    this._el_160 = this.renderer.createElement(this._el_153,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_160,'class','col-md-12');
+    this._text_161 = this.renderer.createText(this._el_160,'\n            ',(null as any));
+    this._el_162 = this.renderer.createElement(this._el_160,':svg:svg',(null as any));
+    this.renderer.setElementAttribute(this._el_162,'height','120');
+    this.renderer.setElementAttribute(this._el_162,'id','visualisation');
+    this.renderer.setElementAttribute(this._el_162,'width','600');
+    this._text_163 = this.renderer.createText(this._el_160,'\n          ',(null as any));
+    this._text_164 = this.renderer.createText(this._el_153,'\n        ',(null as any));
+    this._text_165 = this.renderer.createText(this._el_129,'\n\n      ',(null as any));
+    this._text_166 = this.renderer.createText(this._el_2,'\n    ',(null as any));
+    this._text_167 = this.renderer.createText(this._el_0,'\n  ',(null as any));
+    this._expr_0 = import7.UNINITIALIZED;
     this.init([],[
       this._el_0,
       this._text_1,
@@ -643,256 +464,296 @@ class _View_CpusComponent0 extends import1.AppView<import3.CpusComponent> {
       this._text_3,
       this._el_4,
       this._text_5,
-      this._el_6,
+      this._anchor_6,
       this._text_7,
       this._el_8,
       this._text_9,
-      this._text_10,
-      this._el_11,
+      this._el_10,
+      this._text_11,
       this._text_12,
       this._el_13,
       this._text_14,
-      this._text_15,
-      this._el_16,
+      this._el_15,
+      this._text_16,
       this._text_17,
-      this._text_18,
-      this._el_19,
+      this._el_18,
+      this._text_19,
       this._text_20,
-      this._text_21,
-      this._el_22,
+      this._el_21,
+      this._text_22,
       this._text_23,
-      this._text_24,
-      this._el_25,
+      this._el_24,
+      this._text_25,
       this._text_26,
-      this._text_27,
-      this._el_28,
+      this._el_27,
+      this._text_28,
       this._text_29,
-      this._text_30,
-      this._el_31,
+      this._el_30,
+      this._text_31,
       this._text_32,
-      this._text_33,
-      this._el_34,
+      this._el_33,
+      this._text_34,
       this._text_35,
-      this._text_36,
-      this._el_37,
+      this._el_36,
+      this._text_37,
       this._text_38,
-      this._text_39,
-      this._el_40,
+      this._el_39,
+      this._text_40,
       this._text_41,
-      this._text_42,
-      this._el_43,
+      this._el_42,
+      this._text_43,
       this._text_44,
-      this._text_45,
+      this._el_45,
       this._text_46,
       this._text_47,
       this._el_48,
       this._text_49,
-      this._el_50,
-      this._text_51,
+      this._text_50,
+      this._el_51,
       this._text_52,
-      this._el_53,
-      this._text_54,
-      this._el_55,
+      this._text_53,
+      this._el_54,
+      this._text_55,
       this._text_56,
-      this._text_57,
-      this._el_58,
+      this._el_57,
+      this._text_58,
       this._text_59,
-      this._text_60,
-      this._el_61,
+      this._el_60,
+      this._text_61,
       this._text_62,
-      this._text_63,
-      this._el_64,
+      this._el_63,
+      this._text_64,
       this._text_65,
-      this._text_66,
-      this._el_67,
+      this._el_66,
+      this._text_67,
       this._text_68,
-      this._text_69,
-      this._el_70,
+      this._el_69,
+      this._text_70,
       this._text_71,
       this._text_72,
-      this._el_73,
-      this._text_74,
+      this._text_73,
+      this._el_74,
       this._text_75,
       this._el_76,
       this._text_77,
       this._text_78,
       this._el_79,
       this._text_80,
-      this._text_81,
-      this._el_82,
+      this._el_81,
+      this._text_82,
       this._text_83,
-      this._text_84,
-      this._el_85,
+      this._el_84,
+      this._text_85,
       this._text_86,
-      this._text_87,
+      this._el_87,
       this._text_88,
       this._text_89,
       this._el_90,
       this._text_91,
-      this._el_92,
-      this._text_93,
+      this._text_92,
+      this._el_93,
       this._text_94,
-      this._el_95,
-      this._text_96,
-      this._el_97,
+      this._text_95,
+      this._el_96,
+      this._text_97,
       this._text_98,
-      this._text_99,
-      this._el_100,
+      this._el_99,
+      this._text_100,
       this._text_101,
-      this._text_102,
-      this._el_103,
+      this._el_102,
+      this._text_103,
       this._text_104,
-      this._text_105,
-      this._el_106,
+      this._el_105,
+      this._text_106,
       this._text_107,
-      this._text_108,
-      this._el_109,
+      this._el_108,
+      this._text_109,
       this._text_110,
-      this._text_111,
-      this._el_112,
+      this._el_111,
+      this._text_112,
       this._text_113,
-      this._text_114,
-      this._el_115,
+      this._el_114,
+      this._text_115,
       this._text_116,
-      this._text_117,
-      this._el_118,
+      this._el_117,
+      this._text_118,
       this._text_119,
-      this._text_120,
-      this._el_121,
+      this._el_120,
+      this._text_121,
       this._text_122,
-      this._text_123,
-      this._el_124,
+      this._el_123,
+      this._text_124,
       this._text_125,
       this._text_126,
-      this._el_127,
+      this._text_127,
       this._text_128,
-      this._text_129,
-      this._el_130,
-      this._text_131,
+      this._el_129,
+      this._text_130,
+      this._el_131,
       this._text_132,
       this._el_133,
       this._text_134,
-      this._text_135,
-      this._el_136,
+      this._el_135,
+      this._text_136,
       this._text_137,
-      this._text_138,
-      this._el_139,
-      this._text_140,
+      this._el_138,
+      this._text_139,
+      this._el_140,
       this._text_141,
-      this._el_142,
+      this._text_142,
       this._text_143,
       this._text_144,
       this._el_145,
       this._text_146,
-      this._text_147,
-      this._el_148,
-      this._text_149,
+      this._el_147,
+      this._text_148,
+      this._el_149,
       this._text_150,
-      this._el_151,
+      this._text_151,
       this._text_152,
-      this._text_153,
+      this._el_153,
       this._text_154,
-      this._text_155,
-      this._el_156,
-      this._text_157,
-      this._el_158,
+      this._el_155,
+      this._text_156,
+      this._el_157,
+      this._text_158,
       this._text_159,
-      this._text_160,
-      this._el_161,
-      this._text_162,
-      this._el_163,
+      this._el_160,
+      this._text_161,
+      this._el_162,
+      this._text_163,
       this._text_164,
       this._text_165,
-      this._el_166,
-      this._text_167,
-      this._text_168,
-      this._el_169,
-      this._text_170,
-      this._text_171,
-      this._el_172,
-      this._text_173,
-      this._text_174,
-      this._el_175,
-      this._text_176,
-      this._text_177,
-      this._el_178,
-      this._text_179,
-      this._text_180,
-      this._el_181,
-      this._text_182,
-      this._text_183,
-      this._el_184,
-      this._text_185,
-      this._text_186,
-      this._el_187,
-      this._text_188,
-      this._text_189,
-      this._el_190,
-      this._text_191,
-      this._text_192,
-      this._el_193,
-      this._text_194,
-      this._text_195,
-      this._el_196,
-      this._text_197,
-      this._text_198,
-      this._el_199,
-      this._text_200,
-      this._text_201,
-      this._el_202,
-      this._text_203,
-      this._text_204,
-      this._el_205,
-      this._text_206,
-      this._text_207,
-      this._text_208,
-      this._text_209,
-      this._text_210,
-      this._el_211,
-      this._text_212,
-      this._el_213,
-      this._text_214,
-      this._el_215,
-      this._text_216,
-      this._el_217,
-      this._text_218,
-      this._text_219,
-      this._el_220,
-      this._text_221,
-      this._el_222,
-      this._text_223,
-      this._text_224,
-      this._text_225,
-      this._text_226,
-      this._el_227,
-      this._text_228,
-      this._el_229,
-      this._text_230,
-      this._el_231,
-      this._text_232,
-      this._text_233,
-      this._text_234,
-      this._el_235,
-      this._text_236,
-      this._el_237,
-      this._text_238,
-      this._el_239,
-      this._text_240,
-      this._text_241,
-      this._el_242,
-      this._text_243,
-      this._el_244,
-      this._text_245,
-      this._text_246,
-      this._text_247,
-      this._text_248,
-      this._text_249
+      this._text_166,
+      this._text_167
     ]
     ,[],[]);
     return (null as any);
   }
+  injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
+    if (((token === import13.TemplateRef) && (6 === requestNodeIndex))) { return this._TemplateRef_6_5; }
+    if (((token === import12.NgFor) && (6 === requestNodeIndex))) { return this._NgFor_6_6; }
+    return notFoundResult;
+  }
+  detectChangesInternal(throwOnChange:boolean):void {
+    var changes:{[key: string]:import7.SimpleChange} = (null as any);
+    changes = (null as any);
+    const currVal_0:any = this.context.cpus;
+    if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
+      this._NgFor_6_6.ngForOf = currVal_0;
+      if ((changes === (null as any))) { (changes = {}); }
+      changes['ngForOf'] = new import7.SimpleChange(this._expr_0,currVal_0);
+      this._expr_0 = currVal_0;
+    }
+    if ((changes !== (null as any))) { this._NgFor_6_6.ngOnChanges(changes); }
+    if (!throwOnChange) { this._NgFor_6_6.ngDoCheck(); }
+    this.detectContentChildrenChanges(throwOnChange);
+    this.detectViewChildrenChanges(throwOnChange);
+  }
 }
 export function viewFactory_CpusComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.CpusComponent> {
-  if ((renderType_CpusComponent === (null as any))) { (renderType_CpusComponent = viewUtils.createRenderComponentType('C:/github/modata/assets/app/cpus/cpus.component.html',0,import9.ViewEncapsulation.Emulated,styles_CpusComponent,{})); }
+  if ((renderType_CpusComponent === (null as any))) { (renderType_CpusComponent = viewUtils.createRenderComponentType('C:/github/modata/assets/app/cpus/cpus.component.html',0,import10.ViewEncapsulation.Emulated,styles_CpusComponent,{})); }
   return new _View_CpusComponent0(viewUtils,parentInjector,declarationEl);
+}
+class _View_CpusComponent1 extends import1.AppView<any> {
+  _el_0:any;
+  _text_1:any;
+  _el_2:any;
+  _text_3:any;
+  _text_4:any;
+  _el_5:any;
+  _text_6:any;
+  _el_7:any;
+  _text_8:any;
+  _text_9:any;
+  _el_10:any;
+  _text_11:any;
+  _el_12:any;
+  _text_13:any;
+  _text_14:any;
+  _el_15:any;
+  _text_16:any;
+  _text_17:any;
+  _text_18:any;
+  /*private*/ _expr_0:any;
+  /*private*/ _expr_1:any;
+  /*private*/ _expr_2:any;
+  constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
+    super(_View_CpusComponent1,renderType_CpusComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
+  }
+  createInternal(rootSelector:string):import2.AppElement {
+    this._el_0 = this.renderer.createElement((null as any),'div',(null as any));
+    this.renderer.setElementAttribute(this._el_0,'class','row');
+    this._text_1 = this.renderer.createText(this._el_0,'\n          ',(null as any));
+    this._el_2 = this.renderer.createElement(this._el_0,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_2,'class','col-md-2');
+    this._text_3 = this.renderer.createText(this._el_2,'',(null as any));
+    this._text_4 = this.renderer.createText(this._el_0,'\n          ',(null as any));
+    this._el_5 = this.renderer.createElement(this._el_0,'div',(null as any));
+    this.renderer.setElementAttribute(this._el_5,'class','col-md-10');
+    this._text_6 = this.renderer.createText(this._el_5,'\n            ',(null as any));
+    this._el_7 = this.renderer.createElement(this._el_5,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_7,'class','white');
+    this._text_8 = this.renderer.createText(this._el_7,'[',(null as any));
+    this._text_9 = this.renderer.createText(this._el_5,'\n            ',(null as any));
+    this._el_10 = this.renderer.createElement(this._el_5,'span',(null as any));
+    this._text_11 = this.renderer.createText(this._el_5,'\n            ',(null as any));
+    this._el_12 = this.renderer.createElement(this._el_5,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_12,'class','white');
+    this._text_13 = this.renderer.createText(this._el_12,'',(null as any));
+    this._text_14 = this.renderer.createText(this._el_5,'\n            ',(null as any));
+    this._el_15 = this.renderer.createElement(this._el_5,'span',(null as any));
+    this.renderer.setElementAttribute(this._el_15,'class','white');
+    this._text_16 = this.renderer.createText(this._el_15,']',(null as any));
+    this._text_17 = this.renderer.createText(this._el_5,'\n          ',(null as any));
+    this._text_18 = this.renderer.createText(this._el_0,'\n        ',(null as any));
+    this._expr_0 = import7.UNINITIALIZED;
+    this._expr_1 = import7.UNINITIALIZED;
+    this._expr_2 = import7.UNINITIALIZED;
+    this.init([].concat([this._el_0]),[
+      this._el_0,
+      this._text_1,
+      this._el_2,
+      this._text_3,
+      this._text_4,
+      this._el_5,
+      this._text_6,
+      this._el_7,
+      this._text_8,
+      this._text_9,
+      this._el_10,
+      this._text_11,
+      this._el_12,
+      this._text_13,
+      this._text_14,
+      this._el_15,
+      this._text_16,
+      this._text_17,
+      this._text_18
+    ]
+    ,[],[]);
+    return (null as any);
+  }
+  detectChangesInternal(throwOnChange:boolean):void {
+    this.detectContentChildrenChanges(throwOnChange);
+    const currVal_0:any = import4.interpolate(1,'',this.context.$implicit.id,'');
+    if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
+      this.renderer.setText(this._text_3,currVal_0);
+      this._expr_0 = currVal_0;
+    }
+    const currVal_1:any = this.parent.context.printNumberOfPipes(this.context.$implicit.percentUsage);
+    if (import4.checkBinding(throwOnChange,this._expr_1,currVal_1)) {
+      this.renderer.setElementProperty(this._el_10,'innerHTML',this.viewUtils.sanitizer.sanitize(import15.SecurityContext.HTML,currVal_1));
+      this._expr_1 = currVal_1;
+    }
+    const currVal_2:any = import4.interpolate(1,'',this.context.$implicit.percentUsage,'%');
+    if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
+      this.renderer.setText(this._text_13,currVal_2);
+      this._expr_2 = currVal_2;
+    }
+    this.detectViewChildrenChanges(throwOnChange);
+  }
+}
+function viewFactory_CpusComponent1(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
+  return new _View_CpusComponent1(viewUtils,parentInjector,declarationEl);
 }

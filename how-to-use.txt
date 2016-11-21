@@ -1,8 +1,9 @@
 How to use:
 
 1) Navigate into the folder (in the command line/ terminal)
-2) Run "npm install" to install all required dependencies
-3) Run "npm run build" to run the development build script => Keep this process running! It recompiles your files upon changes.
-4) Run "npm start" in a new command line/ terminal window => Keep this process running as well, it's your NodeJS server. 
+2) Change the Angular 2 constant "BACKEND_URL" in "assets->app->shared.constants" to "http://localhost:3000"
+3) Run "npm install" to install all required dependencies
+4) Run "npm run build" to run the development build script => Keep this process running! It recompiles your files upon changes.
+5) Run "npm start" in a new command line/ terminal window => Keep this process running as well, it's your NodeJS server. 
 
-! Run "npm run build:prod" build the project for production. The production folder is "public". Only index.html should be added referencing the css and js in the folder
+! Run "npm run build:prod" to build the project for production. The production folder is "public". Only index.html should be added referencing the css and js in the folder

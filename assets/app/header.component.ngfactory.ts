@@ -17,6 +17,7 @@ import * as import9 from '@angular/core/src/linker/component_factory';
 import * as import10 from './cpus/cpus.component';
 import * as import11 from './cpus/cpus.component.ngfactory';
 import * as import12 from './cpus/cpu.service';
+import * as import13 from './socket/socket.service';
 var renderType_HeaderComponent_Host:import0.RenderComponentType = (null as any);
 class _View_HeaderComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -59,7 +60,7 @@ class _View_HeaderComponent0 extends import1.AppView<import3.HeaderComponent> {
     this._el_0 = this.renderer.createElement(parentRenderNode,'app-cpu',(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = import11.viewFactory_CpusComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._CpusComponent_0_4 = new import10.CpusComponent(this.parentInjector.get(import12.CpuService));
+    this._CpusComponent_0_4 = new import10.CpusComponent(this.parentInjector.get(import12.CpuService),this.parentInjector.get(import13.SocketService));
     this._appEl_0.initComponent(this._CpusComponent_0_4,[],compView_0);
     compView_0.create(this._CpusComponent_0_4,[],(null as any));
     this.init([],[this._el_0],[],[]);
