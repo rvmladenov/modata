@@ -30,7 +30,6 @@ export class TaskService {
                 return transformedTasks;
             })
             .catch((error: Response) => {
-                this.errorService.handleError(error.json());
                 return Observable.throw(error.json());
             });
     }
